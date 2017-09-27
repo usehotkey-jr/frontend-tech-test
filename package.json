@@ -5,12 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "test": "jest --coverage",
     "lint": "eslint src/**",
     "build": "webpack",
     "precommit": "npm run lint",
-    "prepush": "npm run test"
+    "prepush": "npm test"
   },
   "keywords": [
     "test",
@@ -28,9 +27,13 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
     "babel-loader": "7.1.2",
     "babel-preset-env": "1.6.0",
+    "babel-preset-flow": "6.23.0",
     "eslint": "4.7.2",
+    "eslint-plugin-flowtype": "2.36.0",
+    "flow-bin": "0.55.0",
     "jest": "21.2.0",
     "webpack": "3.6.0"
   }

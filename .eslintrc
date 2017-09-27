@@ -1,5 +1,12 @@
 {
-  "extends": "eslint:all",
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
+  "extends": [
+    "eslint:all",
+    "plugin:flowtype/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
@@ -11,9 +18,10 @@
     "jest": true
   },
   "rules": {
+    "func-style": [2, "declaration", { "allowArrowFunctions": true }],
     "linebreak-style": 0,
     "no-magic-numbers": 0,
     "padded-blocks": 0,
-    "func-style": [2, "declaration", { "allowArrowFunctions": true }]
+    "valid-jsdoc": 0
   }
 }
