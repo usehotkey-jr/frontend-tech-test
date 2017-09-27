@@ -1,0 +1,19 @@
+{
+  "extends": "eslint:all",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-magic-numbers": 0,
+    "padded-blocks": 0,
+    "func-style": [2, "declaration", { "allowArrowFunctions": true }]
+  }
+}
