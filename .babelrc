@@ -1,6 +1,8 @@
 {
   "presets": [
+    "react",
+    "flow",
     "env",
-    "flow"
+    "es2015"
   ]
 }

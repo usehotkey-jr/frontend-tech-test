@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -6,10 +7,13 @@ module.exports = {
         filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
@@ -19,5 +23,10 @@ module.exports = {
                 }
             }
         ]
+    },
+    plugins: [new HtmlWebpackPlugin({title: 'TODO', hash: true})],
+    devServer: {
+        compress: true,
+        port: 9000
     }
 };
