@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoCreator should correctly render 1`] = `
+<TodoCreatorComponent
+  newTodo={Object {}}
+>
+  <div>
+    <styled.input
+      onChange={[Function]}
+      value={undefined}
+    >
+      <input
+        className="sc-bdVaJa fobolH"
+        onChange={[Function]}
+        value={undefined}
+      />
+    </styled.input>
+    <styled.input
+      onChange={[Function]}
+      value={undefined}
+    >
+      <input
+        className="sc-bdVaJa fobolH"
+        onChange={[Function]}
+        value={undefined}
+      />
+    </styled.input>
+    <styled.button
+      onClick={undefined}
+    >
+      <button
+        className="sc-bwzfXH kQNyeC"
+        onClick={undefined}
+      >
+        Add TODO
+      </button>
+    </styled.button>
+  </div>
+</TodoCreatorComponent>
+`;
+
+exports[`TodoCreator should correctly render 2`] = `
+<div>
+  <input
+    class="sc-bdVaJa fobolH"
+  />
+  <input
+    class="sc-bdVaJa fobolH"
+  />
+  <button
+    class="sc-bwzfXH kQNyeC"
+  >
+    Add TODO
+  </button>
+</div>
+`;
+
+exports[`TodoCreator should correctly render 3`] = `
+<TodoCreatorComponent
+  newTodo={Object {}}
+>
+  <div>
+    <styled.input
+      onChange={[Function]}
+      value={undefined}
+    >
+      <input
+        className="sc-bdVaJa fobolH"
+        onChange={[Function]}
+        value={undefined}
+      />
+    </styled.input>
+    <styled.input
+      onChange={[Function]}
+      value={undefined}
+    >
+      <input
+        className="sc-bdVaJa fobolH"
+        onChange={[Function]}
+        value={undefined}
+      />
+    </styled.input>
+    <styled.button
+      onClick={undefined}
+    >
+      <button
+        className="sc-bwzfXH kQNyeC"
+        onClick={undefined}
+      >
+        Add TODO
+      </button>
+    </styled.button>
+  </div>
+</TodoCreatorComponent>
+`;

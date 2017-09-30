@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage --config jest.config.json",
     "lint": "eslint src/**",
     "build": "webpack",
     "flow": "flow",
@@ -48,6 +48,7 @@
     "flow-bin": "0.55.0",
     "html-webpack-plugin": "2.30.1",
     "jest": "21.2.0",
+    "react-test-renderer": "16.0.0",
     "sinon": "4.0.0",
     "webpack": "3.6.0",
     "webpack-dev-server": "2.9.1"
