@@ -36,7 +36,7 @@ export function newTodoReducer (state: Todo = createNewTodo(), action: Action<an
 const add: ActionCreator<void> = actionCreatorFactory("ADD");
 const change: ActionCreator<[string, string]> = actionCreatorFactory("CHANGE");
 
-export const todoActions = {
+export const newTodoActions = {
     add,
     change
 };
@@ -45,7 +45,7 @@ export const todoActions = {
  * Create empty todoItem
  * @returns {{description: string, temporaryId: number, title: string}}
  */
-function createNewTodo (): Todo {
+export function createNewTodo (): Todo {
     return {
         description: "",
         temporaryId: Math.random(),

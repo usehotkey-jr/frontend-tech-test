@@ -14,7 +14,6 @@ export type Store = {
  */
 export function configureStore () {
     const rootReducer = combineReducers({
-        app: (state = "Hello, World!") => state,
         newTodo: newTodoReducer
     });
 

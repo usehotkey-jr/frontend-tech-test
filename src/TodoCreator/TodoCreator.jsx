@@ -3,7 +3,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import type {Todo} from "../newTodo/newTodo.duck";
-import {todoActions} from "../newTodo/newTodo.duck";
+import {newTodoActions} from "../newTodo/newTodo.duck";
 import {selectNewTodo} from "../newTodo/newTodo.selector";
 import {Button, Input} from "./TodoCreator.styled";
 
@@ -11,7 +11,7 @@ type TodoCreatorStateProps = {
     newTodo: Todo;
 };
 
-type TodoCreatorProps = typeof todoActions & TodoCreatorStateProps;
+type TodoCreatorProps = typeof newTodoActions & TodoCreatorStateProps;
 
 export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> {
     makeOnChange = (key: string) => (event: SyntheticEvent<HTMLInputElement>) => {
@@ -35,5 +35,5 @@ export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> 
 
 export const TodoCreator = connect(
     selectNewTodo,
-    todoActions
+    newTodoActions
 )(TodoCreatorComponent);

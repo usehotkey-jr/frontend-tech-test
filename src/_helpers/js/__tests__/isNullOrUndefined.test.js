@@ -1,5 +1,5 @@
 import {isNullOrUndefined} from "../isNullOrUndefined";
-import {createExpectFunc} from "../jest/createExpectFunc.ignore";
+import {createExpectFunc} from "../../jest/createExpectFunc.ignore";
 
 describe("isNullOrUndefined", () => {
     const expectFunc = createExpectFunc(isNullOrUndefined);

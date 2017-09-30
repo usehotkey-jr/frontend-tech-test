@@ -1,6 +1,6 @@
 // @flow
 
-export type ActionCreator<P = mixed> = (payload: P) => Action<P>;
+export type ActionCreator<P> = (payload: P) => Action<P>;
 
 export type Action<P> = {
     type: string;
