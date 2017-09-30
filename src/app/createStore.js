@@ -1,10 +1,10 @@
 // @flow
 
 import {combineReducers, createStore} from "redux";
-import {Todo, editedTodoReducer} from "../editedTodo/editedTodo.duck";
+import {Todo, newTodoReducer} from "../newTodo/newTodo.duck";
 
 export type Store = {
-    editedTodo: Todo;
+    newTodo: ?Todo;
 }
 
 /**
@@ -14,7 +14,7 @@ export type Store = {
 export function configureStore () {
     const rootReducer = combineReducers({
         app: (state = "Hello, World!") => state,
-        editedTodo: editedTodoReducer
+        newTodo: newTodoReducer
     });
 
     return createStore(rootReducer);

@@ -18,10 +18,13 @@
     "jest": true
   },
   "rules": {
+    "array-element-newline": [2, { "multiline": true }],
     "func-style": [2, "declaration", { "allowArrowFunctions": true }],
     "linebreak-style": 0,
     "max-len": [2, 100],
     "no-magic-numbers": 0,
+    "no-ternary": 0,
+    "no-undefined": 0,
     "no-unused-vars": 0,
     "no-use-before-define": [0],
     "one-var": [2, "never"],
