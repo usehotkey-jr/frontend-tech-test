@@ -1,6 +1,6 @@
 // @flow
 
-import {Todo} from "./newTodo.duck";
+import type {Todo} from "./newTodo.duck";
 import {createSelector} from "reselect";
 
 export const selectNewTodo = createSelector(

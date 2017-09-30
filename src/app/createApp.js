@@ -12,7 +12,10 @@ import {configureStore} from "./createStore";
 export function createApp (): void {
     const rootNode = document.createElement("div");
     rootNode.setAttribute("id", "root");
-    document.body.appendChild(rootNode);
+
+    if (document.body !== null) {
+        document.body.appendChild(rootNode);
+    }
 
     const store = configureStore();
 

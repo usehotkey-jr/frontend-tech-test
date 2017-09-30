@@ -1,10 +1,7 @@
 // @flow
 
-import {
-    Action,
-    ActionCreator,
-    createActionCreatorFactory
-} from "../_helpers/redux/createActionCreatorFactory";
+import type {Action, ActionCreator} from "../_helpers/redux/createActionCreatorFactory";
+import {createActionCreatorFactory} from "../_helpers/redux/createActionCreatorFactory";
 import {isActionOfType} from "../_helpers/redux/isActionOfType";
 
 const actionCreatorFactory = createActionCreatorFactory("NEW_TODO");

@@ -2,22 +2,18 @@
 
 import React from "react";
 import {connect} from "react-redux";
-import {AppStyled} from "./App.styled";
+import {AppRootContainer} from "./App.styled";
 import {TodoCreator} from "../TodoCreator/TodoCreator";
 
 /**
  * Root component
- * @param props
  * @returns {XML}
  * @constructor
  */
-export function AppComponent (props) {
+export function App () {
     return (
-        <AppStyled>
-            {props.app}
+        <AppRootContainer>
             <TodoCreator />
-        </AppStyled>
+        </AppRootContainer>
     );
 }
-
-export const App = connect((state) => state)(AppComponent);

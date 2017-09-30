@@ -1,6 +1,6 @@
 // @flow
 
-import {Action, ActionCreator} from "./createActionCreatorFactory";
+import type {Action, ActionCreator} from "./createActionCreatorFactory";
 
 /**
  * Checks is action created by provided action creator
@@ -8,6 +8,6 @@ import {Action, ActionCreator} from "./createActionCreatorFactory";
  * @param actionCreator
  * @returns {boolean}
  */
-export function isActionOfType<P> (action: Action<any>, actionCreator: ActionCreator<P>): boolean {
-    return actionCreator().type === action.type;
+export function isActionOfType<P> (action: Action<mixed>, actionCreator: ActionCreator<P>): boolean {
+    return actionCreator((undefined: any)).type === action.type;
 }
