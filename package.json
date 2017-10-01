@@ -2,14 +2,13 @@
   "name": "test-candidates",
   "version": "0.0.1",
   "description": "test back - front",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "test": "jest --coverage --config jest.config.json",
-    "lint": "eslint src/**",
+    "dev:lint": "eslint src/**",
+    "dev:flow": "flow",
+    "dev:server": "node server.js",
+    "dev:client": "webpack-dev-server",
     "build": "webpack",
-    "flow": "flow",
-    "dev": "webpack-dev-server",
     "precommit": "npm run lint",
     "prepush": "npm test"
   },
@@ -25,6 +24,7 @@
     "react-dom": "16.0.0",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
+    "redux-thunk": "^2.2.0",
     "reselect": "3.0.1",
     "styled-components": "2.2.0"
   },

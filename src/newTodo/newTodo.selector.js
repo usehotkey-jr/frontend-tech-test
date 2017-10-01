@@ -5,5 +5,5 @@ import {createSelector} from "reselect";
 
 export const selectNewTodo = createSelector(
     (store) => store.newTodo,
-    (newTodo: Todo) => ({newTodo})
+    (newTodo: Todo) => newTodo
 );

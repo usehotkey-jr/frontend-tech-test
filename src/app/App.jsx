@@ -3,7 +3,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {AppRootContainer} from "./App.styled";
-import {TodoCreator} from "../TodoCreator/TodoCreator";
+import {TodoCreator} from "../newTodo/TodoCreator/TodoCreator";
 
 /**
  * Root component

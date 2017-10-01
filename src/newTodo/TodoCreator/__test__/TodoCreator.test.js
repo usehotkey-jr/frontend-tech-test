@@ -1,4 +1,4 @@
-import {createTestSnapshot} from "../../_helpers/jest/createTestSnapshot.ignore";
+import {createTestSnapshot} from "../../../_helpers/jest/createTestSnapshot.ignore";
 import {TodoCreatorComponent} from "../TodoCreator";
 
 describe("TodoCreator", () => {

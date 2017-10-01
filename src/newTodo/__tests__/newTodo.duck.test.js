@@ -1,6 +1,6 @@
 import {stub} from "sinon";
 import {createTestReducer} from "../../_helpers/jest/createTestReducer.ignore";
-import {createNewTodo, newTodoActions, newTodoReducer} from "../newTodo.duck";
+import {getNewTodo, newTodoActions, newTodoReducer} from "../newTodo.duck";
 
 describe("newTodoReducer", () => {
     const testReducer = createTestReducer(newTodoReducer);
@@ -17,7 +17,7 @@ describe("newTodoReducer", () => {
         testReducer({
             action: newTodoActions.add(),
             input: null,
-            output: createNewTodo()
+            output: getNewTodo()
         });
     });
 });

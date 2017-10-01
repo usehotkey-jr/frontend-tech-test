@@ -7,6 +7,8 @@ export type Action<P> = {
     payload: P;
 }
 
+export type Dispatch<P> = (Action<P>) => void;
+
 /**
  * Returned function which creates action creators
  * @param namespace

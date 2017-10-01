@@ -2,10 +2,11 @@
 
 import React from "react";
 import {connect} from "react-redux";
-import type {Todo} from "../newTodo/newTodo.duck";
-import {newTodoActions} from "../newTodo/newTodo.duck";
-import {selectNewTodo} from "../newTodo/newTodo.selector";
+import type {Todo} from "../newTodo.duck";
+import {newTodoActions} from "../newTodo.duck";
 import {Button, Input} from "./TodoCreator.styled";
+import {createNewTodo} from "../newTodo.thunk";
+import {selectTodoCreatorProps} from "./TodoCreator.selector";
 
 type TodoCreatorStateProps = {
     newTodo: Todo;
@@ -27,13 +28,16 @@ export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> 
             <div>
                 <Input onChange={this.makeOnChange("title")} value={newTodo.title}/>
                 <Input onChange={this.makeOnChange("description")} value={newTodo.description}/>
-                <Button onClick={this.props.add}>Add TODO</Button>
+                <Button onClick={this.props.createNewTodo}>Add TODO</Button>
             </div>
         );
     }
 }
 
 export const TodoCreator = connect(
-    selectNewTodo,
-    newTodoActions
+    selectTodoCreatorProps,
+    {
+        change: newTodoActions.change,
+        createNewTodo,
+    }
 )(TodoCreatorComponent);

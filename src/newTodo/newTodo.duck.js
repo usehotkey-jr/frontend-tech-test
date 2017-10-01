@@ -10,15 +10,14 @@ export type Todo = {
     id?: number;
     title: string;
     description: string;
-    temporaryId: number;
 }
 
 /**
  * Reducer for newTodo
  */
-export function newTodoReducer (state: Todo = createNewTodo(), action: Action<any>) {
+export function newTodoReducer (state: Todo = getNewTodo(), action: Action<any>) {
     if (isActionOfType(action, add)) {
-        return createNewTodo();
+        return getNewTodo();
     }
 
     if (isActionOfType(action, change)) {
@@ -26,7 +25,7 @@ export function newTodoReducer (state: Todo = createNewTodo(), action: Action<an
 
         return {
             ...state,
-            [key]: value
+            [key]: value,
         };
     }
 
@@ -38,17 +37,16 @@ const change: ActionCreator<[string, string]> = actionCreatorFactory("CHANGE");
 
 export const newTodoActions = {
     add,
-    change
+    change,
 };
 
 /**
  * Create empty todoItem
  * @returns {{description: string, temporaryId: number, title: string}}
  */
-export function createNewTodo (): Todo {
+export function getNewTodo (): Todo {
     return {
         description: "",
-        temporaryId: Math.random(),
-        title: ""
+        title: "",
     };
 }

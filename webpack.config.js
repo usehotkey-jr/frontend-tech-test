@@ -1,18 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const config = require("./config/config");
 
 module.exports = {
     entry: "./src/index.js",
     output: {
         filename: "[name].[chunkhash].js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
     },
     resolve: {
-        extensions: [
-            "*",
-            ".js",
-            ".jsx"
-        ]
+        extensions: ["*", ".js", ".jsx"],
     },
     module: {
         rules: [
@@ -21,20 +18,26 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: {
                     loader: "babel-loader",
-                    options: {presets: ["env", "stage-0"]}
-                }
-            }
-        ]
+                    options: {presets: ["env", "stage-0"]},
+                },
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            title: "TODO"
-        })
+            title: "TODO",
+        }),
     ],
     devServer: {
         compress: true,
-        port: 9000
+        port: config.CLIENT_PORT,
+        proxy: {
+            [config.API_PATH]: {
+                pathRewrite: {[`^${config.API_PATH}`]: ""},
+                target: "http://localhost:9001",
+            },
+        },
     },
-    devtool: "eval-source-map"
+    devtool: "eval-source-map",
 };

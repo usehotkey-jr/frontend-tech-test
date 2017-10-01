@@ -4,12 +4,13 @@ import React from "react";
 
 /**
  * Shallow test snapshot
- * @param component
+ * @param testFunc
  */
-export function getCreateTestSnapshot<P> (testFunc) {
+export function getCreateTestSnapshot<P> (testFunc: mixed) {
     return (Component: React.Component<P>, props: P) => {
         const wrapper = testFunc(<Component {...props} />);
         expect(wrapper).toMatchSnapshot();
+        return wrapper;
     };
 }
 
