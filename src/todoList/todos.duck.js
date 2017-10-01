@@ -24,11 +24,25 @@ export function todosReducer (state: TodosStore = {}, action: Action<any>) {
         };
     }
 
+    if (isActionOfType(action, load)) {
+        const newTodos = {};
+        action.payload.forEach(todo => {
+            newTodos[todo.id] = todo;
+        });
+
+        return {
+            ...state,
+            ...newTodos,
+        };
+    }
+
     return state;
 }
 
 const add: ActionCreator<Todo> = actionCreatorFactory("ADD");
+const load: ActionCreator<Array<Todo>> = actionCreatorFactory("LOAD");
 
 export const todosActions = {
     add,
+    load,
 };

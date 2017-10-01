@@ -1,40 +1,13 @@
 const app = require("express")();
 const tasks = require("./tasks.json");
-const config = require("./config/config");
+const endpoints = require("./config/endpoints");
 
 /**
  * GET /tasks
  *
  * Return the list of tasks with status code 200.
  */
-app.get("/tasks", (req, res) => res.status(200).json(tasks));
-
-/**
- * Get /task/:id
- *
- * id: Number
- *
- * Return the task for the given id.
- *
- * If found return status code 200 and the resource.
- * If not found return status code 404.
- * If id is not valid number return status code 400.
- */
-app.get("/task/:id", (req, res) => {
-    const id = parseInt(req.params.id, 10);
-
-    if (!Number.isNaN(id)) {
-        const task = tasks.find((item) => item.id === id);
-
-        if (task !== null) {
-            return res.status(200).json({task});
-        }
-        return res.status(404).json({message: "Not found."});
-
-    }
-    return res.status(400).json({message: "Bad request."});
-
-});
+app.get("/tasks", (req, res) => res.status(200).json({payload: tasks}));
 
 /**
  * PUT /task/update/:id/:title/:description
@@ -52,7 +25,7 @@ app.put("/task/update/:id/:title/:description", (req, res) => {
     const id = parseInt(req.params.id, 10);
 
     if (!Number.isNaN(id)) {
-        const task = tasks.find((item) => item.id === id);
+        const task = tasks.find(item => item.id === id);
 
         if (task !== null) {
             task.title = req.params.title;
@@ -104,7 +77,7 @@ app.delete("/task/delete/:id", (req, res) => {
     const id = parseInt(req.params.id, 10);
 
     if (!Number.isNaN(id)) {
-        const task = tasks.find((item) => item.id === id);
+        const task = tasks.find(item => item.id === id);
 
         if (task !== null) {
             const taskIndex = tasks;
@@ -118,6 +91,6 @@ app.delete("/task/delete/:id", (req, res) => {
 
 });
 
-app.listen(config.SERVER_PORT, () => {
+app.listen(endpoints.SERVER_PORT, () => {
     process.stdout.write("the server is available on http://localhost:9001/\n");
 });

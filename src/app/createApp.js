@@ -5,11 +5,12 @@ import {Provider} from "react-redux";
 import React from "react";
 import {App} from "./App";
 import {configureStore} from "./configureStore";
+import {loadTodos} from "../todoList/todos.thunk";
 
 /**
- * Prepare DOM, store and then run application
+ * Prepare DOM
  */
-export function createApp (): void {
+function createDOM () {
     const rootNode = document.createElement("div");
     rootNode.setAttribute("id", "root");
 
@@ -17,7 +18,18 @@ export function createApp (): void {
         document.body.appendChild(rootNode);
     }
 
+    return rootNode;
+}
+
+/**
+ * Prepare store and then run application
+ */
+export function createApp (): void {
+    const rootNode = createDOM();
+
     const store = configureStore();
+
+    store.dispatch(loadTodos());
 
     render(
         <Provider store={store}>

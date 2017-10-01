@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const config = require("./config/config");
+const endpoints = require("./config/endpoints");
 
 module.exports = {
     entry: "./src/index.js",
@@ -31,10 +31,10 @@ module.exports = {
     ],
     devServer: {
         compress: true,
-        port: config.CLIENT_PORT,
+        port: endpoints.CLIENT_PORT,
         proxy: {
-            [config.API_PATH]: {
-                pathRewrite: {[`^${config.API_PATH}`]: ""},
+            [endpoints.API_PATH]: {
+                pathRewrite: {[`^${endpoints.API_PATH}`]: ""},
                 target: "http://localhost:9001",
             },
         },
