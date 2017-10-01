@@ -5,6 +5,6 @@ describe("configureStore", () => {
         const store = configureStore();
         const state = store.getState();
 
-        expect(["newTodo"].every((key) => key in state)).toBe(true);
+        expect(["newTodo"].every(key => key in state)).toBe(true);
     });
 });

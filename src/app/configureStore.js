@@ -5,9 +5,12 @@ import thunk from "redux-thunk";
 import type {Todo} from "../newTodo/newTodo.duck";
 import {newTodoReducer} from "../newTodo/newTodo.duck";
 import {API} from "../api/api";
+import type {TodosStore} from "../todoList/todos.duck";
+import {todosReducer} from "../todoList/todos.duck";
 
 export type Store = {
     newTodo: Todo;
+    todos: TodosStore;
 }
 
 /**
@@ -17,6 +20,7 @@ export type Store = {
 export function configureStore () {
     const rootReducer = combineReducers({
         newTodo: newTodoReducer,
+        todos: todosReducer,
     });
 
     return createStore(

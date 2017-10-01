@@ -12,7 +12,7 @@ export type Response<P> = {
  * @returns {Promise.<TResult>|Promise|*}
  */
 export function request<P> (url: string, method: string): Promise<Response<P>> {
-    return fetch(url, {method}).then((response) => {
+    return fetch(url, {method}).then(response => {
         const json = response.json();
 
         console.log(response); // eslint-disable-line no-console

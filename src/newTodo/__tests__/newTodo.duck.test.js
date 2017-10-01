@@ -8,7 +8,7 @@ describe("newTodoReducer", () => {
         testReducer.onUnexpected({});
     });
 
-    test("action ADD should create new todo", () => {
+    test("action CREATE_NEW should create new todo", () => {
         testReducer({
             action: newTodoActions.createNew(),
             input: null,
