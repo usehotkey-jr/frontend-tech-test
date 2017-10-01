@@ -14,9 +14,11 @@ export function getCreateTestSnapshot<P> (testFunc: mixed) {
     };
 }
 
+/* eslint-disable no-undef */
 const testMount = getCreateTestSnapshot(mount);
 const testRender = getCreateTestSnapshot(render);
 const testShallow = getCreateTestSnapshot(mount);
+/* eslint-enable no-undef */
 
 export const createTestSnapshot = {
     all: <P>(Component: React.Component<P>, props: P) => {
@@ -26,5 +28,5 @@ export const createTestSnapshot = {
     },
     mount: testMount,
     render: testRender,
-    shallow: testShallow
+    shallow: testShallow,
 };

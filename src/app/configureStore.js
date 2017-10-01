@@ -7,10 +7,8 @@ import {newTodoReducer} from "../newTodo/newTodo.duck";
 import {API} from "../api/api";
 
 export type Store = {
-    newTodo: ?Todo;
+    newTodo: Todo;
 }
-
-export type GetState<S = Store> = () => S;
 
 /**
  * Prepare store configuration

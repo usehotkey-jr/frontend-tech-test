@@ -2,7 +2,7 @@
 
 import type {Todo} from "../newTodo/newTodo.duck";
 import type {Response} from "./request";
-import {getUrl, request} from "./request";
+import {request} from "./request";
 import {API_PATH} from "../../config/config";
 
 export class Api {

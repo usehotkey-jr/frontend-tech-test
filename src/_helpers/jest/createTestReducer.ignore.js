@@ -1,6 +1,7 @@
 // @flow
 
-export type Reducer<S> = (state: S, action: Action<mixed>) => S;
+import type {Reducer} from "../types/redux";
+
 export type TestReducerParams<S> = {
     action: Action<mixed>,
     input: S,

@@ -12,7 +12,12 @@ type TodoCreatorStateProps = {
     newTodo: Todo;
 };
 
-type TodoCreatorProps = typeof newTodoActions & TodoCreatorStateProps;
+type TodoCreatorDispatchProps = {
+    change: typeof newTodoActions.change;
+    createNewTodo: typeof createNewTodo;
+};
+
+type TodoCreatorProps = TodoCreatorStateProps & TodoCreatorDispatchProps;
 
 export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> {
     makeOnChange = (key: string) => (event: SyntheticEvent<HTMLInputElement>) => {

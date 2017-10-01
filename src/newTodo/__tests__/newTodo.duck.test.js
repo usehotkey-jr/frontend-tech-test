@@ -17,7 +17,7 @@ describe("newTodoReducer", () => {
         testReducer({
             action: newTodoActions.add(),
             input: null,
-            output: getNewTodo()
+            output: getNewTodo(),
         });
     });
 });

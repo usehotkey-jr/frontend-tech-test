@@ -1,6 +1,6 @@
 // @flow
 
-import type {Action, ActionCreator} from "./createActionCreatorFactory";
+import type {Action, ActionCreator} from "../types/redux";
 
 /**
  * Checks is action created by provided action creator

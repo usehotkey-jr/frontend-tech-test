@@ -1,6 +1,6 @@
 // @flow
 
-import type {Action, ActionCreator} from "../_helpers/redux/createActionCreatorFactory";
+import type {Action, ActionCreator} from "../_helpers/types/redux";
 import {createActionCreatorFactory} from "../_helpers/redux/createActionCreatorFactory";
 import {isActionOfType} from "../_helpers/redux/isActionOfType";
 
@@ -16,7 +16,7 @@ export type Todo = {
  * Reducer for newTodo
  */
 export function newTodoReducer (state: Todo = getNewTodo(), action: Action<any>) {
-    if (isActionOfType(action, add)) {
+    if (isActionOfType(action, createNew)) {
         return getNewTodo();
     }
 
@@ -32,12 +32,12 @@ export function newTodoReducer (state: Todo = getNewTodo(), action: Action<any>)
     return state;
 }
 
-const add: ActionCreator<void> = actionCreatorFactory("ADD");
+const createNew: ActionCreator<void> = actionCreatorFactory("CREATE_NEW");
 const change: ActionCreator<[string, string]> = actionCreatorFactory("CHANGE");
 
 export const newTodoActions = {
-    add,
     change,
+    createNew,
 };
 
 /**

@@ -1,13 +1,6 @@
 // @flow
 
-export type ActionCreator<P> = (payload: P) => Action<P>;
-
-export type Action<P> = {
-    type: string;
-    payload: P;
-}
-
-export type Dispatch<P> = (Action<P>) => void;
+import type {ActionCreator} from "../types/redux";
 
 /**
  * Returned function which creates action creators
@@ -17,6 +10,6 @@ export type Dispatch<P> = (Action<P>) => void;
 export function createActionCreatorFactory (namespace: string) {
     return <P>(name: string): ActionCreator<P> => (payload: P) => ({
         payload,
-        type: `${namespace}/${name}`
+        type: `${namespace}/${name}`,
     });
 }

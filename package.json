@@ -4,12 +4,12 @@
   "description": "test back - front",
   "scripts": {
     "test": "jest --coverage --config jest.config.json",
-    "dev:lint": "eslint src/**",
+    "dev:lint": "eslint src/** --fix",
     "dev:flow": "flow",
     "dev:server": "node server.js",
     "dev:client": "webpack-dev-server",
     "build": "webpack",
-    "precommit": "npm run lint",
+    "precommit": "npm run dev:lint",
     "prepush": "npm test"
   },
   "keywords": [
@@ -47,6 +47,7 @@
     "eslint-plugin-flowtype": "2.36.0",
     "flow-bin": "0.55.0",
     "html-webpack-plugin": "2.30.1",
+    "husky": "^0.14.3",
     "jest": "21.2.0",
     "react-test-renderer": "16.0.0",
     "sinon": "4.0.0",
