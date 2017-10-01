@@ -5,11 +5,11 @@
   "scripts": {
     "test": "jest --coverage --config jest.config.json",
     "dev:lint": "eslint src/** --fix",
-    "dev:flow": "flow",
+    "dev:flow": "flow check",
     "dev:server": "node server.js",
     "dev:client": "webpack-dev-server",
     "build": "webpack",
-    "precommit": "npm run dev:lint",
+    "precommit": "npm run dev:lint && npm run dev:flow",
     "prepush": "npm test"
   },
   "keywords": [

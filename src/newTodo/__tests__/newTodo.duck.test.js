@@ -1,13 +1,8 @@
-import {stub} from "sinon";
 import {createTestReducer} from "../../_helpers/jest/createTestReducer.ignore";
 import {getNewTodo, newTodoActions, newTodoReducer} from "../newTodo.duck";
 
 describe("newTodoReducer", () => {
     const testReducer = createTestReducer(newTodoReducer);
-
-    beforeAll(() => {
-        stub(Math, "random").returns(0.5);
-    });
 
     test("unexpected action shouldn't affect original state", () => {
         testReducer.onUnexpected({});
@@ -15,7 +10,7 @@ describe("newTodoReducer", () => {
 
     test("action ADD should create new todo", () => {
         testReducer({
-            action: newTodoActions.add(),
+            action: newTodoActions.createNew(),
             input: null,
             output: getNewTodo(),
         });
