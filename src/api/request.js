@@ -1,5 +1,8 @@
 // @flow
 
+require("es6-promise").polyfill();
+require("isomorphic-fetch");
+
 export type Response<P> = {
     message: string,
     payload: P,

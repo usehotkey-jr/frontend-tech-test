@@ -6,8 +6,14 @@ import {request} from "./request";
 import {API_PATH} from "../../config/endpoints";
 
 export class Api {
+    apiPath: string;
+
+    constructor (apiPath?: string) {
+        this.apiPath = apiPath || API_PATH;
+    }
+
     getUrl (urlPath: Array<string>): string {
-        return `${API_PATH}/${urlPath.join("/")}`;
+        return `${this.apiPath}/${urlPath.join("/")}`;
     }
 
     create (params: Todo): Promise<Response<number>> {
