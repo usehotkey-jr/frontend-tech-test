@@ -18,9 +18,14 @@ export class Api {
         return `${this.apiUrl}/${url.join("/")}`;
     }
 
-    create (params: Todo): Promise<Response<number>> {
-        const url = this.getUrl(["task", "create", params.title, params.description]);
+    create (todo: Todo): Promise<Response<number>> {
+        const url = this.getUrl(["task", "create", todo.title, todo.description]);
         return request(url, "POST");
+    }
+
+    delete (taskId: number): Promise<Response<number>> {
+        const url = this.getUrl(["task", "delete", String(taskId)]);
+        return request(url, "DELETE");
     }
 
     getTasks (): Promise<Response<Array<Todo>>> {

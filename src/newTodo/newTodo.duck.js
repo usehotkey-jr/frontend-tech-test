@@ -7,7 +7,7 @@ import {isActionOfType} from "../_helpers/redux/isActionOfType";
 const actionCreatorFactory = createActionCreatorFactory("NEW_TODO");
 
 export type Todo = {
-    id?: number;
+    id: number;
     title: string;
     description: string;
 }
@@ -42,11 +42,12 @@ export const newTodoActions = {
 
 /**
  * Create empty todoItem
- * @returns {{description: string, temporaryId: number, title: string}}
+ * @returns {{description: string, id: number, title: string}}
  */
 export function getNewTodo (): Todo {
     return {
-        description: "",
+        id: -1,
         title: "",
+        description: "",
     };
 }

@@ -2,7 +2,18 @@
   "coverageReporters": [
     "text-summary"
   ],
-  "setupFiles": ["./test/jestSetup.js"],
+  "coverageThreshold": {
+    "global": {
+      "statements": 90,
+      "branches": 80,
+      "functions": 80,
+      "lines": 90
+    }
+  },
+  "setupFiles": [
+    "<rootDir>/test/shim.js",
+    "<rootDir>/test/jestSetup.js"
+  ],
   "snapshotSerializers": [
     "<rootDir>/node_modules/enzyme-to-json/serializer"
   ]

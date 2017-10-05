@@ -18,8 +18,10 @@ export function request<P> (url: string, method: string): Promise<Response<P>> {
     return fetch(url, {method}).then(response => {
         const json = response.json();
 
-        console.log(response); // eslint-disable-line no-console
-        json.then(console.log); // eslint-disable-line no-console
+        /*
+        // console.log(response); // eslint-disable-line
+        // json.then(console.log); // eslint-disable-line
+        */
 
         return json;
     });

@@ -1,6 +1,7 @@
 import {createTestReducer} from "../../_helpers/jest/createTestReducer.ignore";
 import {todosActions, todosReducer} from "../todos.duck";
 import {todoMock, todosMock} from "../__mocks__/todos.mock";
+import {convertTodoListToMap} from "../todos.selector";
 
 describe("newTodoReducer", () => {
     const testReducer = createTestReducer(todosReducer);
@@ -23,9 +24,16 @@ describe("newTodoReducer", () => {
         testReducer({
             action: todosActions.load(todosMock),
             input: {},
+            output: convertTodoListToMap(todosMock),
+        });
+    });
+
+    test("action REMOVE should delete todo from map by id", () => {
+        testReducer({
+            action: todosActions.remove(1),
+            input: convertTodoListToMap(todosMock),
             output: {
-                [todosMock[0].id]: todosMock[0],
-                [todosMock[1].id]: todosMock[1],
+                [todoMock.id]: todoMock,
             },
         });
     });

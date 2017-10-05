@@ -35,6 +35,11 @@ exports[`TodoList should correctly render 1`] = `
           Guys
         </h4>
       </styled.h4>
+      <span
+        onClick={[Function]}
+      >
+        x
+      </span>
     </div>
     <div
       key="1"
@@ -53,6 +58,11 @@ exports[`TodoList should correctly render 1`] = `
           Item
         </h4>
       </styled.h4>
+      <span
+        onClick={[Function]}
+      >
+        x
+      </span>
     </div>
   </div>
 </TodoListComponent>
@@ -71,6 +81,9 @@ exports[`TodoList should correctly render 2`] = `
     >
       Guys
     </h4>
+    <span>
+      x
+    </span>
   </div>
   <div>
     <h3
@@ -83,6 +96,9 @@ exports[`TodoList should correctly render 2`] = `
     >
       Item
     </h4>
+    <span>
+      x
+    </span>
   </div>
 </div>
 `;
@@ -98,6 +114,11 @@ exports[`TodoList should correctly render 3`] = `
     <styled.h4>
       Guys
     </styled.h4>
+    <span
+      onClick={[Function]}
+    >
+      x
+    </span>
   </div>
   <div
     key="1"
@@ -108,6 +129,11 @@ exports[`TodoList should correctly render 3`] = `
     <styled.h4>
       Item
     </styled.h4>
+    <span
+      onClick={[Function]}
+    >
+      x
+    </span>
   </div>
 </div>
 `;

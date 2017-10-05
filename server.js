@@ -82,7 +82,10 @@ app.delete("/task/delete/:id", (req, res) => {
         if (task !== null) {
             const taskIndex = tasks;
             tasks.splice(taskIndex, 1);
-            return res.status(200).json({message: "Updated successfully"});
+            return res.status(200).json({
+                message: "Updated successfully",
+                payload: id,
+            });
         }
         return res.status(404).json({message: "Not found"});
 
