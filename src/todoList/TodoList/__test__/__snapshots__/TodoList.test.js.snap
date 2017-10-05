@@ -88,59 +88,26 @@ exports[`TodoList should correctly render 2`] = `
 `;
 
 exports[`TodoList should correctly render 3`] = `
-<TodoListComponent
-  todos={
-    Array [
-      Object {
-        "description": "Guys",
-        "id": 0,
-        "title": "Hi",
-      },
-      Object {
-        "description": "Item",
-        "id": 1,
-        "title": "Another",
-      },
-    ]
-  }
->
-  <div>
-    <div
-      key="0"
-    >
-      <styled.h3>
-        <h3
-          className="sc-bdVaJa fpPKzV"
-        >
-          Hi
-        </h3>
-      </styled.h3>
-      <styled.h4>
-        <h4
-          className="sc-bwzfXH dBovyR"
-        >
-          Guys
-        </h4>
-      </styled.h4>
-    </div>
-    <div
-      key="1"
-    >
-      <styled.h3>
-        <h3
-          className="sc-bdVaJa fpPKzV"
-        >
-          Another
-        </h3>
-      </styled.h3>
-      <styled.h4>
-        <h4
-          className="sc-bwzfXH dBovyR"
-        >
-          Item
-        </h4>
-      </styled.h4>
-    </div>
+<div>
+  <div
+    key="0"
+  >
+    <styled.h3>
+      Hi
+    </styled.h3>
+    <styled.h4>
+      Guys
+    </styled.h4>
   </div>
-</TodoListComponent>
+  <div
+    key="1"
+  >
+    <styled.h3>
+      Another
+    </styled.h3>
+    <styled.h4>
+      Item
+    </styled.h4>
+  </div>
+</div>
 `;

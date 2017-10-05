@@ -1,12 +1,9 @@
-import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
 import nock from "nock";
 import {createNewTodo} from "../newTodo.thunk";
 import {newTodoActions} from "../newTodo.duck";
 import {todosActions} from "../../todoList/todos.duck";
-import {Api} from "../../api/api";
-
-const mockStore = configureMockStore([thunk.withExtraArgument(new Api("api"))]);
+import {API_MOCK_URL} from "../../app/__mocks__/configureStore.mock";
+import {testThunk} from "../../_helpers/jest/testThunk.ignore";
 
 describe("createNewTodo thunk", () => {
     afterEach(() => {
@@ -14,7 +11,7 @@ describe("createNewTodo thunk", () => {
     });
 
     test("createNewTodo should create new todo", done => {
-        nock("api")
+        nock(API_MOCK_URL)
             .post("/task/create/title/description")
             .reply(201, {payload: 1});
 
@@ -23,18 +20,17 @@ describe("createNewTodo thunk", () => {
             description: "description",
         };
 
-        const store = mockStore({newTodo});
-        const expectedActions = [
-            newTodoActions.createNew(),
-            todosActions.add({
-                ...newTodo,
-                id: 1,
-            }),
-        ];
-
-        store.dispatch(createNewTodo()).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-            done();
+        testThunk({
+            state: {newTodo},
+            thunk: createNewTodo,
+            actions: [
+                newTodoActions.createNew(),
+                todosActions.add({
+                    ...newTodo,
+                    id: 1,
+                }),
+            ],
+            done,
         });
     });
 });

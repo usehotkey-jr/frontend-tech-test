@@ -33,8 +33,8 @@ module.exports = {
         compress: true,
         port: endpoints.CLIENT_PORT,
         proxy: {
-            [endpoints.API_PATH]: {
-                pathRewrite: {[`^${endpoints.API_PATH}`]: ""},
+            [endpoints.API_URL]: {
+                pathRewrite: {[`^${endpoints.API_URL}`]: ""},
                 target: "http://localhost:9001",
             },
         },

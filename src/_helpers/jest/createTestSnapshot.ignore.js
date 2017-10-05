@@ -17,7 +17,7 @@ export function getCreateTestSnapshot<P> (testFunc: mixed) {
 /* eslint-disable no-undef */
 const testMount = getCreateTestSnapshot(mount);
 const testRender = getCreateTestSnapshot(render);
-const testShallow = getCreateTestSnapshot(mount);
+const testShallow = getCreateTestSnapshot(shallow);
 /* eslint-enable no-undef */
 
 export const createTestSnapshot = {

@@ -3,17 +3,19 @@
 import type {Todo} from "../newTodo/newTodo.duck";
 import type {Response} from "./request";
 import {request} from "./request";
-import {API_PATH} from "../../config/endpoints";
+import {API_URL} from "../../config/endpoints";
 
 export class Api {
-    apiPath: string;
+    apiUrl: string;
 
     constructor (apiPath?: string) {
-        this.apiPath = apiPath || API_PATH;
+        this.apiUrl = apiPath === undefined
+            ? API_URL
+            : apiPath;
     }
 
-    getUrl (urlPath: Array<string>): string {
-        return `${this.apiPath}/${urlPath.join("/")}`;
+    getUrl (url: Array<string>): string {
+        return `${this.apiUrl}/${url.join("/")}`;
     }
 
     create (params: Todo): Promise<Response<number>> {
