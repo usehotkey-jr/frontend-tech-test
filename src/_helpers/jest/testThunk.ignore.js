@@ -4,7 +4,7 @@ import type {Action} from "../types/redux";
 import {mockStore} from "../../app/__mocks__/configureStore.mock";
 
 export type TestThunkParams<S> = {
-    state: S,
+    state?: S,
     actions: Action<mixed>,
     thunk: Function,
     done: () => void,
