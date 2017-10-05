@@ -23,6 +23,11 @@ export class Api {
         return request(url, "POST");
     }
 
+    update (todo: Todo): Promise<Response<Todo>> {
+        const url = this.getUrl(["task", "update", String(todo.id), todo.title, todo.description]);
+        return request(url, "PUT");
+    }
+
     delete (taskId: number): Promise<Response<number>> {
         const url = this.getUrl(["task", "delete", String(taskId)]);
         return request(url, "DELETE");

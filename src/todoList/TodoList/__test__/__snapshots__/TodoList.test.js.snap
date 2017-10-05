@@ -18,122 +18,146 @@ exports[`TodoList should correctly render 1`] = `
   }
 >
   <div>
-    <div
+    <styled.div
       key="0"
     >
-      <styled.h3>
-        <h3
-          className="sc-bdVaJa fpPKzV"
-        >
-          Hi
-        </h3>
-      </styled.h3>
-      <styled.h4>
-        <h4
-          className="sc-bwzfXH dBovyR"
-        >
-          Guys
-        </h4>
-      </styled.h4>
-      <span
-        onClick={[Function]}
+      <div
+        className="sc-bdVaJa kZAgjJ"
       >
-        x
-      </span>
-    </div>
-    <div
+        <styled.input
+          onChange={[Function]}
+          value="Hi"
+        >
+          <input
+            className="sc-bwzfXH euLWQW"
+            onChange={[Function]}
+            value="Hi"
+          />
+        </styled.input>
+        <styled.input
+          onChange={[Function]}
+          value="Guys"
+        >
+          <input
+            className="sc-htpNat lksuPj"
+            onChange={[Function]}
+            value="Guys"
+          />
+        </styled.input>
+        <div
+          onClick={[Function]}
+        >
+          x
+        </div>
+      </div>
+    </styled.div>
+    <styled.div
       key="1"
     >
-      <styled.h3>
-        <h3
-          className="sc-bdVaJa fpPKzV"
-        >
-          Another
-        </h3>
-      </styled.h3>
-      <styled.h4>
-        <h4
-          className="sc-bwzfXH dBovyR"
-        >
-          Item
-        </h4>
-      </styled.h4>
-      <span
-        onClick={[Function]}
+      <div
+        className="sc-bdVaJa kZAgjJ"
       >
-        x
-      </span>
-    </div>
+        <styled.input
+          onChange={[Function]}
+          value="Another"
+        >
+          <input
+            className="sc-bwzfXH euLWQW"
+            onChange={[Function]}
+            value="Another"
+          />
+        </styled.input>
+        <styled.input
+          onChange={[Function]}
+          value="Item"
+        >
+          <input
+            className="sc-htpNat lksuPj"
+            onChange={[Function]}
+            value="Item"
+          />
+        </styled.input>
+        <div
+          onClick={[Function]}
+        >
+          x
+        </div>
+      </div>
+    </styled.div>
   </div>
 </TodoListComponent>
 `;
 
 exports[`TodoList should correctly render 2`] = `
 <div>
-  <div>
-    <h3
-      class="sc-bdVaJa fpPKzV"
-    >
-      Hi
-    </h3>
-    <h4
-      class="sc-bwzfXH dBovyR"
-    >
-      Guys
-    </h4>
-    <span>
+  <div
+    class="sc-bdVaJa kZAgjJ"
+  >
+    <input
+      class="sc-bwzfXH euLWQW"
+      value="Hi"
+    />
+    <input
+      class="sc-htpNat lksuPj"
+      value="Guys"
+    />
+    <div>
       x
-    </span>
+    </div>
   </div>
-  <div>
-    <h3
-      class="sc-bdVaJa fpPKzV"
-    >
-      Another
-    </h3>
-    <h4
-      class="sc-bwzfXH dBovyR"
-    >
-      Item
-    </h4>
-    <span>
+  <div
+    class="sc-bdVaJa kZAgjJ"
+  >
+    <input
+      class="sc-bwzfXH euLWQW"
+      value="Another"
+    />
+    <input
+      class="sc-htpNat lksuPj"
+      value="Item"
+    />
+    <div>
       x
-    </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`TodoList should correctly render 3`] = `
 <div>
-  <div
+  <styled.div
     key="0"
   >
-    <styled.h3>
-      Hi
-    </styled.h3>
-    <styled.h4>
-      Guys
-    </styled.h4>
-    <span
+    <styled.input
+      onChange={[Function]}
+      value="Hi"
+    />
+    <styled.input
+      onChange={[Function]}
+      value="Guys"
+    />
+    <div
       onClick={[Function]}
     >
       x
-    </span>
-  </div>
-  <div
+    </div>
+  </styled.div>
+  <styled.div
     key="1"
   >
-    <styled.h3>
-      Another
-    </styled.h3>
-    <styled.h4>
-      Item
-    </styled.h4>
-    <span
+    <styled.input
+      onChange={[Function]}
+      value="Another"
+    />
+    <styled.input
+      onChange={[Function]}
+      value="Item"
+    />
+    <div
       onClick={[Function]}
     >
       x
-    </span>
-  </div>
+    </div>
+  </styled.div>
 </div>
 `;

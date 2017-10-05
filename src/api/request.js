@@ -9,7 +9,7 @@ export type Response<P> = {
 }
 
 /**
- * Wrapper on re
+ * Wrapper over fetch
  * @param url
  * @param method
  * @returns {Promise.<TResult>|Promise|*}

@@ -10,12 +10,12 @@ import {todosActions} from "../todoList/todos.duck";
  * Create new task
  */
 export function createNewTodo () {
-    return (dispath: Dispatch, getState: GetState, api: Api) => {
+    return (dispatch: Dispatch, getState: GetState, api: Api) => {
         const newTodo = selectNewTodo(getState());
 
         return api.create(newTodo).then(response => {
-            dispath(newTodoActions.createNew());
-            dispath(todosActions.add({
+            dispatch(newTodoActions.createNew());
+            dispatch(todosActions.update({
                 ...newTodo,
                 id: response.payload,
             }));

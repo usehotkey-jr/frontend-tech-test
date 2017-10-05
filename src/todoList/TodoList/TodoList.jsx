@@ -3,17 +3,18 @@
 import React from "react";
 import {connect} from "react-redux";
 import type {Todo} from "../../newTodo/newTodo.duck";
-import {Description, Title} from "./TodoList.styled";
+import {Description, Title, TodoItem} from "./TodoList.styled";
 import {selectTodosList} from "./TodosList.selector";
-import type {ActionCreator} from "../../_helpers/types/redux";
-import {removeTodo} from "../todos.thunk";
+import type {TodoTitleOrDescriptionKey, UpdateTodoParams} from "../todos.thunk";
+import {removeTodo, updateTodo} from "../todos.thunk";
 
 type TodoListStateProps = {
     todos: Array<Todo>;
 };
 
 type TodoListDispatchProps = {
-    removeTodo: ActionCreator<number>;
+    removeTodo: (number) => void;
+    updateTodo: (UpdateTodoParams) => void;
 };
 
 type TodoListProps = TodoListStateProps & TodoListDispatchProps;
@@ -21,13 +22,24 @@ type TodoListProps = TodoListStateProps & TodoListDispatchProps;
 export class TodoListComponent extends React.PureComponent<TodoListProps> {
     createRemoveTodo = (id: number) => () => this.props.removeTodo(id);
 
+    createChangeTodo = (id: number, key: TodoTitleOrDescriptionKey) =>
+        (event: SyntheticEvent<HTMLInputElement>) => {
+            this.props.updateTodo([id, key, event.currentTarget.value]);
+        };
+
     render () {
         const todosHtml = this.props.todos.map(todo => (
-            <div key={todo.id}>
-                <Title>{todo.title}</Title>
-                <Description>{todo.description}</Description>
-                <span onClick={this.createRemoveTodo(todo.id)}>x</span>
-            </div>
+            <TodoItem key={todo.id}>
+                <Title
+                    value={todo.title}
+                    onChange={this.createChangeTodo(todo.id, "title")}
+                />
+                <Description
+                    value={todo.description}
+                    onChange={this.createChangeTodo(todo.id, "description")}
+                />
+                <div onClick={this.createRemoveTodo(todo.id)}>x</div>
+            </TodoItem>
         ));
 
         return (
@@ -42,5 +54,6 @@ export const TodoList = connect(
     selectTodosList,
     {
         removeTodo,
+        updateTodo,
     }
 )(TodoListComponent);

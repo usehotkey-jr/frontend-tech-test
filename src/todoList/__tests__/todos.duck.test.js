@@ -10,9 +10,9 @@ describe("newTodoReducer", () => {
         testReducer.onUnexpected({});
     });
 
-    test("action ADD should create add/replace todo by id", () => {
+    test("action UPDATE should create add/replace todo by id", () => {
         testReducer({
-            action: todosActions.add(todoMock),
+            action: todosActions.update(todoMock),
             input: {},
             output: {
                 [todoMock.id]: todoMock,

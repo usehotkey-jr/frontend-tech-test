@@ -3,14 +3,16 @@
 import type {Api} from "../api/api";
 import type {Dispatch, GetState} from "../_helpers/types/redux";
 import {todosActions} from "../todoList/todos.duck";
+import type {Todo} from "../newTodo/newTodo.duck";
+import {selectTodos} from "./todos.selector";
 
 /**
  * Load all tasks from server
  */
 export function loadTodos () {
-    return (dispath: Dispatch, getState: GetState, api: Api) =>
+    return (dispatch: Dispatch, getState: GetState, api: Api) =>
         api.getTasks().then(response => {
-            dispath(todosActions.load(response.payload));
+            dispatch(todosActions.load(response.payload));
         });
 }
 
@@ -22,4 +24,26 @@ export function removeTodo (id: number) {
         api.delete(id).then(response => {
             dispath(todosActions.remove(response.payload));
         });
+}
+
+export type TodoTitleOrDescriptionKey = "title" | "description";
+export type UpdateTodoParams = [number, TodoTitleOrDescriptionKey, string];
+
+/**
+ * Remove task from list
+ */
+export function updateTodo (params: UpdateTodoParams) {
+    return (dispatch: Dispatch, getState: GetState, api: Api) => {
+        const [id, key, value] = params;
+        const currentTodo = selectTodos(getState())[id];
+
+        const newTodo: Todo = {
+            ...currentTodo,
+            [key]: value,
+        };
+
+        return api.update(newTodo).then(response => {
+            dispatch(todosActions.update(response.payload));
+        });
+    };
 }

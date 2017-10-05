@@ -25,7 +25,7 @@ describe("createNewTodo thunk", () => {
             thunk: createNewTodo,
             actions: [
                 newTodoActions.createNew(),
-                todosActions.add({
+                todosActions.update({
                     ...newTodo,
                     id: 1,
                 }),

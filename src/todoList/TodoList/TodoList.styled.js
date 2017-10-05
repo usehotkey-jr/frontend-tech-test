@@ -2,11 +2,16 @@
 
 import styled from "styled-components";
 
-export const Title = styled.h3`
+export const TodoItem = styled.div`
+  display: flex;
+`;
+
+
+export const Title = styled.input`
   color: brown;
 `;
 
-export const Description = styled.h4`
+export const Description = styled.input`
   color: gray;
 `;
 
