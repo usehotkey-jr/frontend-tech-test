@@ -1,7 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoList should correctly render 1`] = `
+<div>
+  <styled.div
+    key="0"
+  >
+    <styled.input
+      onBlur={[Function]}
+      onChange={[Function]}
+      value="Hi"
+    />
+    <styled.input
+      onBlur={[Function]}
+      onChange={[Function]}
+      value="Guys"
+    />
+    <div
+      onClick={[Function]}
+    >
+      x
+    </div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.input
+      onBlur={[Function]}
+      onChange={[Function]}
+      value="Another"
+    />
+    <styled.input
+      onBlur={[Function]}
+      onChange={[Function]}
+      value="Item"
+    />
+    <div
+      onClick={[Function]}
+    >
+      x
+    </div>
+  </styled.div>
+</div>
+`;
+
+exports[`TodoList should correctly render 2`] = `
+<div>
+  <div
+    class="sc-bdVaJa kZAgjJ"
+  >
+    <input
+      class="sc-bwzfXH euLWQW"
+      value="Hi"
+    />
+    <input
+      class="sc-htpNat lksuPj"
+      value="Guys"
+    />
+    <div>
+      x
+    </div>
+  </div>
+  <div
+    class="sc-bdVaJa kZAgjJ"
+  >
+    <input
+      class="sc-bwzfXH euLWQW"
+      value="Another"
+    />
+    <input
+      class="sc-htpNat lksuPj"
+      value="Item"
+    />
+    <div>
+      x
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TodoList should correctly render 3`] = `
 <TodoListComponent
+  removeTodo={[Function]}
   todos={
     Array [
       Object {
@@ -16,6 +95,7 @@ exports[`TodoList should correctly render 1`] = `
       },
     ]
   }
+  updateTodo={[Function]}
 >
   <div>
     <styled.div
@@ -94,82 +174,4 @@ exports[`TodoList should correctly render 1`] = `
     </styled.div>
   </div>
 </TodoListComponent>
-`;
-
-exports[`TodoList should correctly render 2`] = `
-<div>
-  <div
-    class="sc-bdVaJa kZAgjJ"
-  >
-    <input
-      class="sc-bwzfXH euLWQW"
-      value="Hi"
-    />
-    <input
-      class="sc-htpNat lksuPj"
-      value="Guys"
-    />
-    <div>
-      x
-    </div>
-  </div>
-  <div
-    class="sc-bdVaJa kZAgjJ"
-  >
-    <input
-      class="sc-bwzfXH euLWQW"
-      value="Another"
-    />
-    <input
-      class="sc-htpNat lksuPj"
-      value="Item"
-    />
-    <div>
-      x
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TodoList should correctly render 3`] = `
-<div>
-  <styled.div
-    key="0"
-  >
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Hi"
-    />
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Guys"
-    />
-    <div
-      onClick={[Function]}
-    >
-      x
-    </div>
-  </styled.div>
-  <styled.div
-    key="1"
-  >
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Another"
-    />
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Item"
-    />
-    <div
-      onClick={[Function]}
-    >
-      x
-    </div>
-  </styled.div>
-</div>
 `;

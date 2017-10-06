@@ -1,64 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoCreator should correctly render 1`] = `
-<TodoCreatorComponent
-  newTodo={Object {}}
->
+<styled.div>
   <styled.div>
-    <div
-      className="sc-bdVaJa dBRzUj"
-    >
-      <styled.div>
-        <div
-          className="sc-bwzfXH igYdVz"
-        >
-          <styled.input
-            onChange={[Function]}
-            placeholder="Title"
-            value={undefined}
-          >
-            <input
-              className="sc-htpNat iNiuLJ"
-              onChange={[Function]}
-              placeholder="Title"
-              value={undefined}
-            />
-          </styled.input>
-        </div>
-      </styled.div>
-      <styled.div>
-        <div
-          className="sc-bwzfXH igYdVz"
-        >
-          <styled.textarea
-            onChange={[Function]}
-            placeholder="Description"
-            value={undefined}
-          >
-            <textarea
-              className="sc-ifAKCX kfdXsU"
-              onChange={[Function]}
-              placeholder="Description"
-              value={undefined}
-            />
-          </styled.textarea>
-        </div>
-      </styled.div>
-      <styled.button
-        disabled={true}
-        onClick={undefined}
-      >
-        <button
-          className="sc-EHOje ioCkUR"
-          disabled={true}
-          onClick={undefined}
-        >
-          Add task
-        </button>
-      </styled.button>
-    </div>
+    <styled.input
+      onChange={[Function]}
+      placeholder="Title"
+      value="Hi"
+    />
   </styled.div>
-</TodoCreatorComponent>
+  <styled.div>
+    <styled.textarea
+      onChange={[Function]}
+      placeholder="Description"
+      value="Guys"
+    />
+  </styled.div>
+  <styled.button
+    disabled={false}
+    onClick={[Function]}
+  >
+    Add task
+  </styled.button>
+</styled.div>
 `;
 
 exports[`TodoCreator should correctly render 2`] = `
@@ -71,6 +35,7 @@ exports[`TodoCreator should correctly render 2`] = `
     <input
       class="sc-htpNat iNiuLJ"
       placeholder="Title"
+      value="Hi"
     />
   </div>
   <div
@@ -79,11 +44,12 @@ exports[`TodoCreator should correctly render 2`] = `
     <textarea
       class="sc-ifAKCX kfdXsU"
       placeholder="Description"
-    />
+    >
+      Guys
+    </textarea>
   </div>
   <button
-    class="sc-EHOje ioCkUR"
-    disabled=""
+    class="sc-EHOje drNmmh"
   >
     Add task
   </button>
@@ -91,23 +57,70 @@ exports[`TodoCreator should correctly render 2`] = `
 `;
 
 exports[`TodoCreator should correctly render 3`] = `
-<styled.div>
+<TodoCreatorComponent
+  change={[Function]}
+  createNewTodo={[Function]}
+  newTodo={
+    Object {
+      "description": "Guys",
+      "id": 0,
+      "title": "Hi",
+    }
+  }
+>
   <styled.div>
-    <styled.input
-      onChange={[Function]}
-      placeholder="Title"
-    />
+    <div
+      className="sc-bdVaJa dBRzUj"
+    >
+      <styled.div>
+        <div
+          className="sc-bwzfXH igYdVz"
+        >
+          <styled.input
+            onChange={[Function]}
+            placeholder="Title"
+            value="Hi"
+          >
+            <input
+              className="sc-htpNat iNiuLJ"
+              onChange={[Function]}
+              placeholder="Title"
+              value="Hi"
+            />
+          </styled.input>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="sc-bwzfXH igYdVz"
+        >
+          <styled.textarea
+            onChange={[Function]}
+            placeholder="Description"
+            value="Guys"
+          >
+            <textarea
+              className="sc-ifAKCX kfdXsU"
+              onChange={[Function]}
+              placeholder="Description"
+              value="Guys"
+            />
+          </styled.textarea>
+        </div>
+      </styled.div>
+      <styled.button
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="sc-EHOje drNmmh"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Add task
+        </button>
+      </styled.button>
+    </div>
   </styled.div>
-  <styled.div>
-    <styled.textarea
-      onChange={[Function]}
-      placeholder="Description"
-    />
-  </styled.div>
-  <styled.button
-    disabled={true}
-  >
-    Add task
-  </styled.button>
-</styled.div>
+</TodoCreatorComponent>
 `;

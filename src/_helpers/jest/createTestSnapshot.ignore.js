@@ -22,9 +22,9 @@ const testShallow = getCreateTestSnapshot(shallow);
 
 export const createTestSnapshot = {
     all: <P>(Component: React.Component<P>, props: P) => {
-        testMount(Component, props);
-        testRender(Component, props);
         testShallow(Component, props);
+        testRender(Component, props);
+        return testMount(Component, props);
     },
     mount: testMount,
     render: testRender,
