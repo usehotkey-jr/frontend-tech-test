@@ -34,7 +34,7 @@ describe("todos thunk", () => {
         });
     });
 
-    test("updateTodo should update task", done => {
+    test("updateTodo should can update task via server", done => {
         nock(API_MOCK_URL)
             .put("/task/update/0/Hi/Guys")
             .reply(200, {payload: todoMock});
@@ -48,7 +48,28 @@ describe("todos thunk", () => {
                     },
                 },
             },
-            thunk: () => updateTodo([0, "title", "Hi"]),
+            thunk: () => updateTodo([0, "title", "Hi", true]),
+            actions: [
+                todosActions.update({
+                    ...todoMock,
+                    title: "Hi",
+                }),
+            ],
+            done,
+        });
+    });
+
+    test("updateTodo should can update with temporary task data", done => {
+        testThunk({
+            state: {
+                todos: {
+                    0: {
+                        ...todoMock,
+                        title: "Previous",
+                    },
+                },
+            },
+            thunk: () => updateTodo([0, "title", "Hi", false]),
             actions: [
                 todosActions.update({
                     ...todoMock,

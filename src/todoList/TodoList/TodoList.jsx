@@ -22,9 +22,9 @@ type TodoListProps = TodoListStateProps & TodoListDispatchProps;
 export class TodoListComponent extends React.PureComponent<TodoListProps> {
     createRemoveTodo = (id: number) => () => this.props.removeTodo(id);
 
-    createChangeTodo = (id: number, key: TodoTitleOrDescriptionKey) =>
+    createChangeTodo = (id: number, key: TodoTitleOrDescriptionKey, onServer: boolean) =>
         (event: SyntheticEvent<HTMLInputElement>) => {
-            this.props.updateTodo([id, key, event.currentTarget.value]);
+            this.props.updateTodo([id, key, event.currentTarget.value, onServer]);
         };
 
     render () {
@@ -32,11 +32,13 @@ export class TodoListComponent extends React.PureComponent<TodoListProps> {
             <TodoItem key={todo.id}>
                 <Title
                     value={todo.title}
-                    onChange={this.createChangeTodo(todo.id, "title")}
+                    onChange={this.createChangeTodo(todo.id, "title", false)}
+                    onBlur={this.createChangeTodo(todo.id, "title", true)}
                 />
                 <Description
                     value={todo.description}
-                    onChange={this.createChangeTodo(todo.id, "description")}
+                    onChange={this.createChangeTodo(todo.id, "description", false)}
+                    onBlur={this.createChangeTodo(todo.id, "description", true)}
                 />
                 <div onClick={this.createRemoveTodo(todo.id)}>x</div>
             </TodoItem>

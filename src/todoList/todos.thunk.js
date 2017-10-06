@@ -27,14 +27,14 @@ export function removeTodo (id: number) {
 }
 
 export type TodoTitleOrDescriptionKey = "title" | "description";
-export type UpdateTodoParams = [number, TodoTitleOrDescriptionKey, string];
+export type UpdateTodoParams = [number, TodoTitleOrDescriptionKey, string, boolean];
 
 /**
  * Remove task from list
  */
 export function updateTodo (params: UpdateTodoParams) {
-    return (dispatch: Dispatch, getState: GetState, api: Api) => {
-        const [id, key, value] = params;
+    return (dispatch: Dispatch, getState: GetState, api: Api): Promise<mixed> => {
+        const [id, key, value, onServer] = params;
         const currentTodo = selectTodos(getState())[id];
 
         const newTodo: Todo = {
@@ -42,8 +42,12 @@ export function updateTodo (params: UpdateTodoParams) {
             [key]: value,
         };
 
-        return api.update(newTodo).then(response => {
-            dispatch(todosActions.update(response.payload));
-        });
+        if (onServer) {
+            return api.update(newTodo)
+                .then(response => dispatch(todosActions.update(response.payload)));
+        }
+
+        return Promise.resolve()
+            .then(() => dispatch(todosActions.update(newTodo)));
     };
 }
