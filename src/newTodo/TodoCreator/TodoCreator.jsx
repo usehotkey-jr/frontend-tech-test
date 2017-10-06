@@ -4,9 +4,10 @@ import React from "react";
 import {connect} from "react-redux";
 import type {Todo} from "../newTodo.duck";
 import {newTodoActions} from "../newTodo.duck";
-import {Button, Input} from "./TodoCreator.styled";
+import {BlockContainerTC, ContainerTC, InputTC, TextAreaTC} from "./TodoCreator.styled";
 import {createNewTodo} from "../newTodo.thunk";
 import {selectTodoCreatorProps} from "./TodoCreator.selector";
+import {Button} from "../../_components/Button.styled";
 
 type TodoCreatorStateProps = {
     newTodo: Todo;
@@ -26,13 +27,31 @@ export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> 
 
     render () {
         const {newTodo} = this.props;
+        const isAddDisabled = !newTodo.title || !newTodo.description;
 
         return (
-            <div>
-                <Input onChange={this.makeOnChange("title")} value={newTodo.title}/>
-                <Input onChange={this.makeOnChange("description")} value={newTodo.description}/>
-                <Button onClick={this.props.createNewTodo}>Add TODO</Button>
-            </div>
+            <ContainerTC>
+                <BlockContainerTC>
+                    <InputTC
+                        onChange={this.makeOnChange("title")}
+                        value={newTodo.title}
+                        placeholder="Title"
+                    />
+                </BlockContainerTC>
+                <BlockContainerTC>
+                    <TextAreaTC
+                        onChange={this.makeOnChange("description")}
+                        value={newTodo.description}
+                        placeholder="Description"
+                    />
+                </BlockContainerTC>
+                <Button
+                    onClick={this.props.createNewTodo}
+                    disabled={isAddDisabled}
+                >
+                    Add task
+                </Button>
+            </ContainerTC>
         );
     }
 }
