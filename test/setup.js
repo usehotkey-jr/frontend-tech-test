@@ -1,8 +1,9 @@
 import Enzyme, {mount, render, shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import {polyfill} from "es6-promise";
+import "isomorphic-fetch";
 
-require("es6-promise").polyfill();
-require("isomorphic-fetch");
+polyfill();
 
 Enzyme.configure({adapter: new Adapter()});
 
