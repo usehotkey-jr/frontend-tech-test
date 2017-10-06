@@ -25,21 +25,25 @@ exports[`TodoList should correctly render 1`] = `
         className="sc-bdVaJa kZAgjJ"
       >
         <styled.input
+          onBlur={[Function]}
           onChange={[Function]}
           value="Hi"
         >
           <input
             className="sc-bwzfXH euLWQW"
+            onBlur={[Function]}
             onChange={[Function]}
             value="Hi"
           />
         </styled.input>
         <styled.input
+          onBlur={[Function]}
           onChange={[Function]}
           value="Guys"
         >
           <input
             className="sc-htpNat lksuPj"
+            onBlur={[Function]}
             onChange={[Function]}
             value="Guys"
           />
@@ -58,21 +62,25 @@ exports[`TodoList should correctly render 1`] = `
         className="sc-bdVaJa kZAgjJ"
       >
         <styled.input
+          onBlur={[Function]}
           onChange={[Function]}
           value="Another"
         >
           <input
             className="sc-bwzfXH euLWQW"
+            onBlur={[Function]}
             onChange={[Function]}
             value="Another"
           />
         </styled.input>
         <styled.input
+          onBlur={[Function]}
           onChange={[Function]}
           value="Item"
         >
           <input
             className="sc-htpNat lksuPj"
+            onBlur={[Function]}
             onChange={[Function]}
             value="Item"
           />
@@ -129,10 +137,12 @@ exports[`TodoList should correctly render 3`] = `
     key="0"
   >
     <styled.input
+      onBlur={[Function]}
       onChange={[Function]}
       value="Hi"
     />
     <styled.input
+      onBlur={[Function]}
       onChange={[Function]}
       value="Guys"
     />
@@ -146,10 +156,12 @@ exports[`TodoList should correctly render 3`] = `
     key="1"
   >
     <styled.input
+      onBlur={[Function]}
       onChange={[Function]}
       value="Another"
     />
     <styled.input
+      onBlur={[Function]}
       onChange={[Function]}
       value="Item"
     />

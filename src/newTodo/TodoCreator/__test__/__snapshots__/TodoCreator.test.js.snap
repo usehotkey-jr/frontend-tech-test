@@ -4,67 +4,110 @@ exports[`TodoCreator should correctly render 1`] = `
 <TodoCreatorComponent
   newTodo={Object {}}
 >
-  <div>
-    <styled.input
-      onChange={[Function]}
-      value={undefined}
+  <styled.div>
+    <div
+      className="sc-bdVaJa dBRzUj"
     >
-      <input
-        className="sc-bdVaJa fobolH"
-        onChange={[Function]}
-        value={undefined}
-      />
-    </styled.input>
-    <styled.input
-      onChange={[Function]}
-      value={undefined}
-    >
-      <input
-        className="sc-bdVaJa fobolH"
-        onChange={[Function]}
-        value={undefined}
-      />
-    </styled.input>
-    <styled.button
-      onClick={undefined}
-    >
-      <button
-        className="sc-bwzfXH kQNyeC"
+      <styled.div>
+        <div
+          className="sc-bwzfXH igYdVz"
+        >
+          <styled.input
+            onChange={[Function]}
+            placeholder="Title"
+            value={undefined}
+          >
+            <input
+              className="sc-htpNat iNiuLJ"
+              onChange={[Function]}
+              placeholder="Title"
+              value={undefined}
+            />
+          </styled.input>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="sc-bwzfXH igYdVz"
+        >
+          <styled.textarea
+            onChange={[Function]}
+            placeholder="Description"
+            value={undefined}
+          >
+            <textarea
+              className="sc-ifAKCX kfdXsU"
+              onChange={[Function]}
+              placeholder="Description"
+              value={undefined}
+            />
+          </styled.textarea>
+        </div>
+      </styled.div>
+      <styled.button
+        disabled={true}
         onClick={undefined}
       >
-        Add TODO
-      </button>
-    </styled.button>
-  </div>
+        <button
+          className="sc-EHOje ioCkUR"
+          disabled={true}
+          onClick={undefined}
+        >
+          Add task
+        </button>
+      </styled.button>
+    </div>
+  </styled.div>
 </TodoCreatorComponent>
 `;
 
 exports[`TodoCreator should correctly render 2`] = `
-<div>
-  <input
-    class="sc-bdVaJa fobolH"
-  />
-  <input
-    class="sc-bdVaJa fobolH"
-  />
-  <button
-    class="sc-bwzfXH kQNyeC"
+<div
+  class="sc-bdVaJa dBRzUj"
+>
+  <div
+    class="sc-bwzfXH igYdVz"
   >
-    Add TODO
+    <input
+      class="sc-htpNat iNiuLJ"
+      placeholder="Title"
+    />
+  </div>
+  <div
+    class="sc-bwzfXH igYdVz"
+  >
+    <textarea
+      class="sc-ifAKCX kfdXsU"
+      placeholder="Description"
+    />
+  </div>
+  <button
+    class="sc-EHOje ioCkUR"
+    disabled=""
+  >
+    Add task
   </button>
 </div>
 `;
 
 exports[`TodoCreator should correctly render 3`] = `
-<div>
-  <styled.input
-    onChange={[Function]}
-  />
-  <styled.input
-    onChange={[Function]}
-  />
-  <styled.button>
-    Add TODO
+<styled.div>
+  <styled.div>
+    <styled.input
+      onChange={[Function]}
+      placeholder="Title"
+    />
+  </styled.div>
+  <styled.div>
+    <styled.textarea
+      onChange={[Function]}
+      placeholder="Description"
+    />
+  </styled.div>
+  <styled.button
+    disabled={true}
+  >
+    Add task
   </styled.button>
-</div>
+</styled.div>
 `;
