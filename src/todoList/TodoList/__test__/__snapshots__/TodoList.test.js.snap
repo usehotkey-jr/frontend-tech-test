@@ -83,7 +83,7 @@ exports[`TodoList should correctly render 2`] = `
       class="sc-bwzfXH mcrrz"
     >
       <button
-        class="sc-EHOje kdyGEL"
+        class="sc-EHOje kXaDXs"
       >
         Remove item
       </button>
@@ -113,7 +113,7 @@ exports[`TodoList should correctly render 2`] = `
       class="sc-bwzfXH mcrrz"
     >
       <button
-        class="sc-EHOje kdyGEL"
+        class="sc-EHOje kXaDXs"
       >
         Remove item
       </button>
@@ -193,7 +193,7 @@ exports[`TodoList should correctly render 3`] = `
               onClick={[Function]}
             >
               <button
-                className="sc-EHOje kdyGEL"
+                className="sc-EHOje kXaDXs"
                 onClick={[Function]}
               >
                 Remove item
@@ -254,7 +254,7 @@ exports[`TodoList should correctly render 3`] = `
               onClick={[Function]}
             >
               <button
-                className="sc-EHOje kdyGEL"
+                className="sc-EHOje kXaDXs"
                 onClick={[Function]}
               >
                 Remove item

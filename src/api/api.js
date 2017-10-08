@@ -4,6 +4,7 @@ import type {Todo} from "../newTodo/newTodo.duck";
 import type {Response} from "./request";
 import {request} from "./request";
 import {API_URL} from "../../config/endpoints";
+import {replaceUrlLinebreaks} from "../_helpers/format/urlLinebreak";
 
 export class Api {
     apiUrl: string;
@@ -15,7 +16,7 @@ export class Api {
     }
 
     getUrl (url: Array<string>): string {
-        return `${this.apiUrl}/${url.join("/")}`;
+        return `${this.apiUrl}/${url.map(replaceUrlLinebreaks).join("/")}`;
     }
 
     create (todo: Todo): Promise<Response<number>> {
