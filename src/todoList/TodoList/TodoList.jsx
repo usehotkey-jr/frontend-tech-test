@@ -3,10 +3,13 @@
 import React from "react";
 import {connect} from "react-redux";
 import type {Todo} from "../../newTodo/newTodo.duck";
-import {Description, Title, TodoItem} from "./TodoList.styled";
+import {BlockTL, TodoItem} from "./TodoList.styled";
 import {selectTodosList} from "./TodosList.selector";
 import type {TodoTitleOrDescriptionKey, UpdateTodoParams} from "../todos.thunk";
 import {removeTodo, updateTodo} from "../todos.thunk";
+import {Input} from "../../_components/Input.styled";
+import {TextArea} from "../../_components/TextArea.styled";
+import {Button} from "../../_components/Button.styled";
 
 type TodoListStateProps = {
     todos: Array<Todo>;
@@ -28,26 +31,36 @@ export class TodoListComponent extends React.PureComponent<TodoListProps> {
         };
 
     render () {
-        const todosHtml = this.props.todos.map(todo => (
-            <TodoItem key={todo.id}>
-                <Title
-                    value={todo.title}
-                    onChange={this.createChangeTodo(todo.id, "title", false)}
-                    onBlur={this.createChangeTodo(todo.id, "title", true)}
-                />
-                <Description
-                    value={todo.description}
-                    onChange={this.createChangeTodo(todo.id, "description", false)}
-                    onBlur={this.createChangeTodo(todo.id, "description", true)}
-                />
-                <div onClick={this.createRemoveTodo(todo.id)}>x</div>
-            </TodoItem>
-        ));
+        const todosHtml = this.props.todos.map(todo => this.renderItem(todo));
 
         return (
             <div>
                 {todosHtml}
             </div>
+        );
+    }
+
+    renderItem (todo: Todo) {
+        return (
+            <TodoItem key={todo.id}>
+                <BlockTL>
+                    <Input
+                        value={todo.title}
+                        onChange={this.createChangeTodo(todo.id, "title", false)}
+                        onBlur={this.createChangeTodo(todo.id, "title", true)}
+                    />
+                </BlockTL>
+                <BlockTL>
+                    <TextArea
+                        value={todo.description}
+                        onChange={this.createChangeTodo(todo.id, "description", false)}
+                        onBlur={this.createChangeTodo(todo.id, "description", true)}
+                    />
+                </BlockTL>
+                <BlockTL>
+                    <Button onClick={this.createRemoveTodo(todo.id)} danger>Remove item</Button>
+                </BlockTL>
+            </TodoItem>
         );
     }
 }

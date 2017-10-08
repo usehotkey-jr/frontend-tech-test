@@ -16,6 +16,7 @@ export const Button = styled.button`
     border: 1px solid ${stroke.success};    
     border-radius: ${small.radius};
     outline: none;
+    cursor: pointer;
   
     &:hover {
         background-color: ${bg.successHover};
@@ -25,11 +26,20 @@ export const Button = styled.button`
         box-shadow: ${boxShadow.success};
     }
     
-    ${props => props.disabled && css`
-	    background-color: ${bg.disabledHover};
+    ${props => props.danger && css`
+	    background-color: ${bg.danger};
+	    border: 1px solid ${stroke.danger}; 
 	    
 	    &:hover {
-            background-color: ${bg.disabledHover};
+            background-color: ${bg.dangerHover};
+        }
+	`}    
+    
+    ${props => props.disabled && css`
+	    background-color: ${bg.disabled};
+	    
+	    &:hover {
+            background-color: ${bg.disabled};
         }
 	`}
 `;

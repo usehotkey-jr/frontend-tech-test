@@ -4,10 +4,12 @@ import React from "react";
 import {connect} from "react-redux";
 import type {Todo} from "../newTodo.duck";
 import {newTodoActions} from "../newTodo.duck";
-import {BlockContainerTC, ContainerTC, InputTC, TextAreaTC} from "./TodoCreator.styled";
+import {BlockContainerTC, ContainerTC} from "./TodoCreator.styled";
 import {createNewTodo} from "../newTodo.thunk";
 import {selectTodoCreatorProps} from "./TodoCreator.selector";
 import {Button} from "../../_components/Button.styled";
+import {TextArea} from "../../_components/TextArea.styled";
+import {Input} from "../../_components/Input.styled";
 
 type TodoCreatorStateProps = {
     newTodo: Todo;
@@ -32,14 +34,14 @@ export class TodoCreatorComponent extends React.PureComponent<TodoCreatorProps> 
         return (
             <ContainerTC>
                 <BlockContainerTC>
-                    <InputTC
+                    <Input
                         onChange={this.makeOnChange("title")}
                         value={newTodo.title}
                         placeholder="Title"
                     />
                 </BlockContainerTC>
                 <BlockContainerTC>
-                    <TextAreaTC
+                    <TextArea
                         onChange={this.makeOnChange("description")}
                         value={newTodo.description}
                         placeholder="Description"

@@ -9,6 +9,7 @@ export const size = {
     small: templateTo(1),
     medium: templateTo(2),
     large: templateTo(3),
+    xlarge: templateTo(5),
 };
 
 /**

@@ -1,17 +1,13 @@
 // @flow
 
 import styled from "styled-components";
+import {size} from "../../theme/size";
 
 export const TodoItem = styled.div`
-  display: flex;
+  margin-bottom: ${size.large.spacing};
 `;
 
-
-export const Title = styled.input`
-  color: brown;
-`;
-
-export const Description = styled.input`
-  color: gray;
+export const BlockTL = styled.div`
+  margin-bottom: ${size.small.spacing};
 `;
 

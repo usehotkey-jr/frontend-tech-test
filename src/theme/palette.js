@@ -5,12 +5,15 @@ export const palette = {
     },
     bg: {
         success: "#28b546",
-        successHover: "#2fcb53",
-        disabledHover: "#78797a",
+        successHover: "#2fd054",
+        danger: "#c03036",
+        dangerHover: "#e4313a",
+        disabled: "#78797a",
     },
     stroke: {
         primary: "#d1d5da",
         success: "#1b6632",
+        danger: "#9c2a2f",
         control: "#2188ff",
     },
     boxShadow: {
