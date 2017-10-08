@@ -7,5 +7,6 @@ exports[`App should correctly render 1`] = `
   </styled.h2>
   <Connect(TodoCreatorComponent) />
   <Connect(TodoListComponent) />
+  <Connect(ErrorNotifierComponent) />
 </styled.div>
 `;

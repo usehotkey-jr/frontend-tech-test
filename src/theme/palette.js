@@ -10,6 +10,9 @@ export const palette = {
         dangerHover: "#e4313a",
         disabled: "#78797a",
     },
+    badge: {
+        danger: "#e4313a",
+    },
     stroke: {
         primary: "#d1d5da",
         success: "#1b6632",

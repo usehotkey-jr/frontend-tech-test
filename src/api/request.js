@@ -19,7 +19,10 @@ export type Response<P> = {
 export function request<P> (url: string, method: string): Promise<Response<P>> {
     const req = fetch(url, {method}).then(response => {
         if (!response.ok) {
-            return response.json().then(json => Promise.reject(json));
+            return response.json().then(json => {
+                handleApiError(response, json);
+                return Promise.reject(response);
+            });
         }
 
         /*
@@ -29,9 +32,6 @@ export function request<P> (url: string, method: string): Promise<Response<P>> {
 
         return response.json();
     });
-
-
-    req.catch(handleApiError);
 
     return req;
 }

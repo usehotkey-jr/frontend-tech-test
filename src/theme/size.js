@@ -1,6 +1,7 @@
 // @flow
 
 const sizeTemplate = {
+    block: 80,
     spacing: 5,
     radius: 3,
 };

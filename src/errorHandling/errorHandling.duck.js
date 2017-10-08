@@ -3,18 +3,20 @@
 import type {Action, ActionCreator} from "../_helpers/types/redux";
 import {createActionCreatorFactory} from "../_helpers/redux/createActionCreatorFactory";
 import {isActionOfType} from "../_helpers/redux/isActionOfType";
-import type {Response} from "../api/request";
 
 const actionCreatorFactory = createActionCreatorFactory("ERROR_HANDLING");
 
 export type ErrorHandling = {
-    stack: mixed[];
-    lastApi?: Response<mixed>;
+    all: Notification[];
 };
 
+export type Notification = {
+    id: number;
+    message: string;
+}
+
 const errorHandlingInitialState = {
-    stack: [],
-    lastApi: undefined,
+    all: [],
 };
 
 
@@ -22,20 +24,29 @@ const errorHandlingInitialState = {
  * Reducer for errorHandling
  */
 export function errorHandlingReducer (state: ErrorHandling = errorHandlingInitialState, action: Action<any>) {
-    if (isActionOfType(action, handleApi)) {
+    if (isActionOfType(action, handle)) {
         const error = action.payload;
 
         return {
-            stack: [...state.stack.slice(0, 9), error],
-            lastApi: error,
+            all: [...state.all, error],
+        };
+    }
+
+    if (isActionOfType(action, clear)) {
+        const nextAll = state.all.filter(error => error.id !== action.payload.id);
+
+        return {
+            all: nextAll,
         };
     }
 
     return state;
 }
 
-const handleApi: ActionCreator<Response<mixed>> = actionCreatorFactory("HANDLE_API");
+const handle: ActionCreator<Notification> = actionCreatorFactory("HANDLE");
+const clear: ActionCreator<Notification> = actionCreatorFactory("CLEAR");
 
 export const errorHandlingActions = {
-    handleApi,
+    handle,
+    clear,
 };
