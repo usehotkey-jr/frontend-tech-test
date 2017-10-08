@@ -1,5 +1,3 @@
-// @flow
-
 import React from "react";
 import "../../node_modules/normalize.css/normalize.css";
 import "../theme/shim.css";
@@ -9,8 +7,6 @@ import {TodoList} from "../todoList/TodoList/TodoList";
 
 /**
  * Root component
- * @returns {XML}
- * @constructor
  */
 export function App () {
     return (

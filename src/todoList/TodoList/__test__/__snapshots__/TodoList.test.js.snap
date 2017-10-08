@@ -5,40 +5,54 @@ exports[`TodoList should correctly render 1`] = `
   <styled.div
     key="0"
   >
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Hi"
-    />
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Guys"
-    />
-    <div
-      onClick={[Function]}
-    >
-      x
-    </div>
+    <styled.div>
+      <styled.input
+        onBlur={[Function]}
+        onChange={[Function]}
+        value="Hi"
+      />
+    </styled.div>
+    <styled.div>
+      <styled.textarea
+        onBlur={[Function]}
+        onChange={[Function]}
+        value="Guys"
+      />
+    </styled.div>
+    <styled.div>
+      <styled.button
+        danger={true}
+        onClick={[Function]}
+      >
+        Remove item
+      </styled.button>
+    </styled.div>
   </styled.div>
   <styled.div
     key="1"
   >
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Another"
-    />
-    <styled.input
-      onBlur={[Function]}
-      onChange={[Function]}
-      value="Item"
-    />
-    <div
-      onClick={[Function]}
-    >
-      x
-    </div>
+    <styled.div>
+      <styled.input
+        onBlur={[Function]}
+        onChange={[Function]}
+        value="Another"
+      />
+    </styled.div>
+    <styled.div>
+      <styled.textarea
+        onBlur={[Function]}
+        onChange={[Function]}
+        value="Item"
+      />
+    </styled.div>
+    <styled.div>
+      <styled.button
+        danger={true}
+        onClick={[Function]}
+      >
+        Remove item
+      </styled.button>
+    </styled.div>
   </styled.div>
 </div>
 `;
@@ -46,33 +60,63 @@ exports[`TodoList should correctly render 1`] = `
 exports[`TodoList should correctly render 2`] = `
 <div>
   <div
-    class="sc-bdVaJa kZAgjJ"
+    class="sc-bdVaJa kahNgM"
   >
-    <input
-      class="sc-bwzfXH euLWQW"
-      value="Hi"
-    />
-    <input
-      class="sc-htpNat lksuPj"
-      value="Guys"
-    />
-    <div>
-      x
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <input
+        class="sc-htpNat HdjGh"
+        value="Hi"
+      />
+    </div>
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <textarea
+        class="sc-ifAKCX bLeok"
+      >
+        Guys
+      </textarea>
+    </div>
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <button
+        class="sc-EHOje kdyGEL"
+      >
+        Remove item
+      </button>
     </div>
   </div>
   <div
-    class="sc-bdVaJa kZAgjJ"
+    class="sc-bdVaJa kahNgM"
   >
-    <input
-      class="sc-bwzfXH euLWQW"
-      value="Another"
-    />
-    <input
-      class="sc-htpNat lksuPj"
-      value="Item"
-    />
-    <div>
-      x
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <input
+        class="sc-htpNat HdjGh"
+        value="Another"
+      />
+    </div>
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <textarea
+        class="sc-ifAKCX bLeok"
+      >
+        Item
+      </textarea>
+    </div>
+    <div
+      class="sc-bwzfXH mcrrz"
+    >
+      <button
+        class="sc-EHOje kdyGEL"
+      >
+        Remove item
+      </button>
     </div>
   </div>
 </div>
@@ -102,74 +146,122 @@ exports[`TodoList should correctly render 3`] = `
       key="0"
     >
       <div
-        className="sc-bdVaJa kZAgjJ"
+        className="sc-bdVaJa kahNgM"
       >
-        <styled.input
-          onBlur={[Function]}
-          onChange={[Function]}
-          value="Hi"
-        >
-          <input
-            className="sc-bwzfXH euLWQW"
-            onBlur={[Function]}
-            onChange={[Function]}
-            value="Hi"
-          />
-        </styled.input>
-        <styled.input
-          onBlur={[Function]}
-          onChange={[Function]}
-          value="Guys"
-        >
-          <input
-            className="sc-htpNat lksuPj"
-            onBlur={[Function]}
-            onChange={[Function]}
-            value="Guys"
-          />
-        </styled.input>
-        <div
-          onClick={[Function]}
-        >
-          x
-        </div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.input
+              onBlur={[Function]}
+              onChange={[Function]}
+              value="Hi"
+            >
+              <input
+                className="sc-htpNat HdjGh"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value="Hi"
+              />
+            </styled.input>
+          </div>
+        </styled.div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.textarea
+              onBlur={[Function]}
+              onChange={[Function]}
+              value="Guys"
+            >
+              <textarea
+                className="sc-ifAKCX bLeok"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value="Guys"
+              />
+            </styled.textarea>
+          </div>
+        </styled.div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.button
+              danger={true}
+              onClick={[Function]}
+            >
+              <button
+                className="sc-EHOje kdyGEL"
+                onClick={[Function]}
+              >
+                Remove item
+              </button>
+            </styled.button>
+          </div>
+        </styled.div>
       </div>
     </styled.div>
     <styled.div
       key="1"
     >
       <div
-        className="sc-bdVaJa kZAgjJ"
+        className="sc-bdVaJa kahNgM"
       >
-        <styled.input
-          onBlur={[Function]}
-          onChange={[Function]}
-          value="Another"
-        >
-          <input
-            className="sc-bwzfXH euLWQW"
-            onBlur={[Function]}
-            onChange={[Function]}
-            value="Another"
-          />
-        </styled.input>
-        <styled.input
-          onBlur={[Function]}
-          onChange={[Function]}
-          value="Item"
-        >
-          <input
-            className="sc-htpNat lksuPj"
-            onBlur={[Function]}
-            onChange={[Function]}
-            value="Item"
-          />
-        </styled.input>
-        <div
-          onClick={[Function]}
-        >
-          x
-        </div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.input
+              onBlur={[Function]}
+              onChange={[Function]}
+              value="Another"
+            >
+              <input
+                className="sc-htpNat HdjGh"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value="Another"
+              />
+            </styled.input>
+          </div>
+        </styled.div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.textarea
+              onBlur={[Function]}
+              onChange={[Function]}
+              value="Item"
+            >
+              <textarea
+                className="sc-ifAKCX bLeok"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value="Item"
+              />
+            </styled.textarea>
+          </div>
+        </styled.div>
+        <styled.div>
+          <div
+            className="sc-bwzfXH mcrrz"
+          >
+            <styled.button
+              danger={true}
+              onClick={[Function]}
+            >
+              <button
+                className="sc-EHOje kdyGEL"
+                onClick={[Function]}
+              >
+                Remove item
+              </button>
+            </styled.button>
+          </div>
+        </styled.div>
       </div>
     </styled.div>
   </div>

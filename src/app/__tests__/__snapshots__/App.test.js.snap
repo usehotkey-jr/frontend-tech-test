@@ -2,6 +2,9 @@
 
 exports[`App should correctly render 1`] = `
 <styled.div>
+  <styled.h2>
+    Todo List
+  </styled.h2>
   <Connect(TodoCreatorComponent) />
   <Connect(TodoListComponent) />
 </styled.div>

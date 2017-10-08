@@ -27,13 +27,13 @@ exports[`TodoCreator should correctly render 1`] = `
 
 exports[`TodoCreator should correctly render 2`] = `
 <div
-  class="sc-bdVaJa dBRzUj"
+  class="sc-bdVaJa btOCPD"
 >
   <div
     class="sc-bwzfXH igYdVz"
   >
     <input
-      class="sc-htpNat iNiuLJ"
+      class="sc-bxivhb bStphO"
       placeholder="Title"
       value="Hi"
     />
@@ -42,14 +42,14 @@ exports[`TodoCreator should correctly render 2`] = `
     class="sc-bwzfXH igYdVz"
   >
     <textarea
-      class="sc-ifAKCX kfdXsU"
+      class="sc-EHOje kyhFuH"
       placeholder="Description"
     >
       Guys
     </textarea>
   </div>
   <button
-    class="sc-EHOje drNmmh"
+    class="sc-htpNat byIjwz"
   >
     Add task
   </button>
@@ -70,7 +70,7 @@ exports[`TodoCreator should correctly render 3`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa dBRzUj"
+      className="sc-bdVaJa btOCPD"
     >
       <styled.div>
         <div
@@ -82,7 +82,7 @@ exports[`TodoCreator should correctly render 3`] = `
             value="Hi"
           >
             <input
-              className="sc-htpNat iNiuLJ"
+              className="sc-bxivhb bStphO"
               onChange={[Function]}
               placeholder="Title"
               value="Hi"
@@ -100,7 +100,7 @@ exports[`TodoCreator should correctly render 3`] = `
             value="Guys"
           >
             <textarea
-              className="sc-ifAKCX kfdXsU"
+              className="sc-EHOje kyhFuH"
               onChange={[Function]}
               placeholder="Description"
               value="Guys"
@@ -113,7 +113,7 @@ exports[`TodoCreator should correctly render 3`] = `
         onClick={[Function]}
       >
         <button
-          className="sc-EHOje drNmmh"
+          className="sc-htpNat byIjwz"
           disabled={false}
           onClick={[Function]}
         >

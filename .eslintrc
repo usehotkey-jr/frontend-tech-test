@@ -30,6 +30,10 @@
     "func-style": [2, "declaration", { "allowArrowFunctions": true }],
     "linebreak-style": 0,
     "max-len": [2, 110],
+    "max-statements": [
+      2,
+      15
+    ],
     "no-duplicate-imports": 0,
     "no-extra-parens": 0,
     "no-invalid-this": 0,
