@@ -20,19 +20,21 @@ Then open url: [http://localhost:9000/](http://localhost:9000/)
 * Tests - jest, enzyme
 * Static analysis - Flow
 
-# Folder structure
+## Folder structure
 
-Here I have introduced my own way of organising folder structre.
+Here I have introduced my own way of organize folder structre.
 
-That way pay attention to splitting code by `features` instead of splitting code on styles, views, models, tests, mocks & etc.
+That way pay attention to splitting code by `features` instead of splitting code on `styles, views, models, tests, mocks` & etc.
 
 ## Motivation
 I was used latest tech stack instead of `made in Travix` solutions, because open-source growing faster & use more flexible ways to solve problems.
 
-I think described above tech stack helps keep project clean & well tested.
+Tech stack described above helps keep project clean & well tested.
 
 Thank you, for attention.
 Igor Golopolosov
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 # Travix test
