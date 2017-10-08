@@ -20,9 +20,9 @@ export function loadTodos () {
  * Remove task from list
  */
 export function removeTodo (id: number) {
-    return (dispath: Dispatch, getState: GetState, api: Api) =>
+    return (dispatch: Dispatch, getState: GetState, api: Api) =>
         api.delete(id).then(response => {
-            dispath(todosActions.remove(response.payload));
+            dispatch(todosActions.remove(response.payload));
         });
 }
 
@@ -44,7 +44,7 @@ export function updateTodo (params: UpdateTodoParams) {
 
         if (onServer) {
             return api.update(newTodo)
-                .then(response => dispatch(todosActions.update(response.payload)));
+                .then(response => dispatch(todosActions.update(newTodo)));
         }
 
         return Promise.resolve()

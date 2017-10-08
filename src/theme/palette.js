@@ -20,5 +20,6 @@ export const palette = {
         primaryInner: "inset 0 1px 2px rgba(27,31,35,0.075)",
         primaryFocused: "inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3)",
         success: "0 0 0 0.2em rgba(52,208,88,0.3)",
+        danger: "0 0 0 0.2em rgba(208, 52, 59, 0.3)",
     },
 };

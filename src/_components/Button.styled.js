@@ -22,7 +22,7 @@ export const Button = styled.button`
         background-color: ${bg.successHover};
     }
     
-    &:active {
+    &:active, &:focus {
         box-shadow: ${boxShadow.success};
     }
     
@@ -32,7 +32,11 @@ export const Button = styled.button`
 	    
 	    &:hover {
             background-color: ${bg.dangerHover};
-        }
+        }  
+        
+        &:active, &:focus {
+			box-shadow: ${boxShadow.danger};
+		}
 	`}    
     
     ${props => props.disabled && css`
