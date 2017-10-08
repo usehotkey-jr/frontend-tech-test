@@ -1,6 +1,43 @@
+# Description
+## Usage
+
+To start application locally run following commands in CLI:
+
+```
+npm i
+npm run dev:server
+npm run dev:client
+```
+
+Then open url: [http://localhost:9000/](http://localhost:9000/)
+
+## Used solutions
+* UI - React
+* Data flows - Redux, redux-thunk, reselect
+* Styles - normalize.css & styled-components (CSS in JS)
+* EcmaScript version - ES6 via Babel
+* Lint - eslint
+* Tests - jest, enzyme
+* Static analysis - Flow
+
+# Folder structure
+
+Here I have introduced my own way of organising folder structre.
+
+That way pay attention to splitting code by `features` instead of splitting code on styles, views, models, tests, mocks & etc.
+
+## Motivation
+I was used latest tech stack instead of `made in Travix` solutions, because open-source growing faster & use more flexible ways to solve problems.
+
+I think described above tech stack helps keep project clean & well tested.
+
+Thank you, for attention.
+Igor Golopolosov
+
+
 # Travix test
 
-Travix Front-End Tech Interview Test 
+Travix Front-End Tech Interview Test
 
 # Introduction
 
@@ -30,7 +67,7 @@ Fork the repository into your account. Once your code is ready open a pull-reque
 
 # Bonus
 
-* unit-tests for the UI 
+* unit-tests for the UI
 * integration-test (one (or more) just in order to show that you know what is it (: )
 * evolution - unit-tests for the server
 * dynamic-ui (web-sockets...?)
