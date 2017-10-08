@@ -1,5 +1,7 @@
 // @flow
 
+import {handleApiError} from "../errorHandling/errorHandling";
+
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
@@ -15,14 +17,21 @@ export type Response<P> = {
  * @returns {Promise.<TResult>|Promise|*}
  */
 export function request<P> (url: string, method: string): Promise<Response<P>> {
-    return fetch(url, {method}).then(response => {
-        const json = response.json();
+    const req = fetch(url, {method}).then(response => {
+        if (!response.ok) {
+            return response.json().then(json => Promise.reject(json));
+        }
 
         /*
         // console.log(response); // eslint-disable-line
         // json.then(console.log); // eslint-disable-line
         */
 
-        return json;
+        return response.json();
     });
+
+
+    req.catch(handleApiError);
+
+    return req;
 }

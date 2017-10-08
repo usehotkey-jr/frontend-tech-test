@@ -4,7 +4,7 @@ import {render} from "react-dom";
 import {Provider} from "react-redux";
 import React from "react";
 import {App} from "./App";
-import {configureStore} from "./configureStore";
+import {getStore} from "./store";
 import {loadTodos} from "../todoList/todos.thunk";
 
 /**
@@ -27,7 +27,7 @@ function createDOM () {
 export function createApp (): void {
     const rootNode = createDOM();
 
-    const store = configureStore();
+    const store = getStore();
 
     store.dispatch(loadTodos());
 

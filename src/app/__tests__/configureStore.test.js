@@ -1,9 +1,9 @@
-import {configureStore} from "../configureStore";
+import {getStore} from "../store";
 
-describe("configureStore", () => {
+describe("store", () => {
     test("all store node should exist", () => {
-        const state = configureStore().getState();
+        const state = getStore().getState();
 
-        expect(["newTodo"].every(key => key in state)).toBe(true);
+        expect(["newTodo", "todos", "errorHandling"].every(key => key in state)).toBe(true);
     });
 });

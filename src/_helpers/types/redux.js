@@ -1,7 +1,7 @@
 // @flow
 
 
-import type {Store} from "../../app/configureStore";
+import type {Store} from "../../app/store";
 
 export type ActionCreator<P> = (payload: P) => Action<P>;
 

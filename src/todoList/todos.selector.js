@@ -1,7 +1,7 @@
 // @flow
 
 import type {TodosStore} from "./todos.duck";
-import type {Store} from "../app/configureStore";
+import type {Store} from "../app/store";
 import {createSelector} from "reselect";
 import type {Todo} from "../newTodo/newTodo.duck";
 

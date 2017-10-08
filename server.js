@@ -27,7 +27,7 @@ app.put("/task/update/:id/:title/:description", (req, res) => {
     if (!Number.isNaN(id)) {
         const task = tasks.find(item => item.id === id);
 
-        if (task !== null) {
+        if (task !== undefined) {
             task.title = req.params.title;
             task.description = req.params.description;
             return res.status(200).json({payload: task});
@@ -79,7 +79,7 @@ app.delete("/task/delete/:id", (req, res) => {
     if (!Number.isNaN(id)) {
         const task = tasks.find(item => item.id === id);
 
-        if (task !== null) {
+        if (task !== undefined) {
             const taskIndex = tasks;
             tasks.splice(taskIndex, 1);
             return res.status(200).json({
