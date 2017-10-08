@@ -8,11 +8,13 @@ import {getStore} from "../app/store";
  * Handler of api errors.
  */
 export function handleApiError (response: any, error: Response<mixed>) {
-    getStore().dispatch(errorHandlingActions.handle({
+    const handledError = {
         message: `Request to ${response.url} failed with status: ${response.status}.
         Error message: ${error.message}`,
         id: Math.random(),
-    }));
+    };
+
+    getStore().dispatch(errorHandlingActions.handle(handledError));
 }
 
 window.addEventListener("unhandledrejection", event => {

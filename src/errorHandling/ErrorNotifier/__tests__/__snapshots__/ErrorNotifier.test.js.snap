@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorNotifier should correctly render 1`] = `
+<styled.div>
+  <styled.div
+    key="1"
+  >
+    123
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    234
+  </styled.div>
+</styled.div>
+`;
+
+exports[`ErrorNotifier should correctly render 2`] = `
+<div
+  class="sc-bdVaJa bBbzvV"
+>
+  <div
+    class="sc-bwzfXH dNrWeL"
+  >
+    123
+  </div>
+  <div
+    class="sc-bwzfXH dNrWeL"
+  >
+    234
+  </div>
+</div>
+`;
+
+exports[`ErrorNotifier should correctly render 3`] = `
+<ErrorNotifierComponent
+  errors={
+    Array [
+      Object {
+        "id": 1,
+        "message": "123",
+      },
+      Object {
+        "id": 2,
+        "message": "234",
+      },
+    ]
+  }
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa bBbzvV"
+    >
+      <styled.div
+        key="1"
+      >
+        <div
+          className="sc-bwzfXH dNrWeL"
+        >
+          123
+        </div>
+      </styled.div>
+      <styled.div
+        key="2"
+      >
+        <div
+          className="sc-bwzfXH dNrWeL"
+        >
+          234
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</ErrorNotifierComponent>
+`;
